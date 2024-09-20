@@ -1,8 +1,48 @@
-# Assignment 2: Regression models, predicting from data  {#assignment2}
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 
+# Assignment 2: Regression models, predicting from data {#assignment2}
 
 The assignment has three parts:
 
-- Part 1: Lactate thresholds
-- Part 2: Predicting sizes of DNA fragments
-- Part 3: Interpreting a regression table
+-   Part 1: Lactate thresholds
+-   Part 2: Predicting sizes of DNA fragments
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(magrittr)
+# Create a data frame of known distances and molecular weights
+ladder <- data.frame(dist = c(34.5, 405.5, 612.5, 930.5, 1016.5, NA,NA,NA,NA,NA,NA,NA,NA), 
+                     
+                     mw = c(1000, 900, 800, 
+                            700, 600, 500,
+                            400, 300, 250, 
+                            200, 150, 100, 50))
+            
+
+# Create a new data frame of unknowns
+unknown <- data.frame(dist = c(18.5, 32.5, 608.5, 928.5, 1013.5))
+
+# Fit the model
+cal <- lm(log(mw) ~ dist, data = ladder)
+
+d <- lm(mw ~ dist, ladder)
+
+# Check model performance, R^2 should be ~ 1.
+summary(cal)
+
+preds <- exp(predict(cal, newdata = unknown))
+
+predict(cal)
+
+
+ladder %>% 
+  ggplot(aes(dist, mw)) + 
+           geom_point() +
+  geom_abline(intercept = coef(d)[1], slope = coef(d)[2])
+  
+```
