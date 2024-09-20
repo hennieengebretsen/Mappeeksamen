@@ -205,6 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#assigment-3" id="toc-assigment-3" class="nav-link active" data-scroll-target="#assigment-3"><span class="header-section-number">2.0.1</span> Assigment 3</a></li>
+  <li><a href="#metode" id="toc-metode" class="nav-link" data-scroll-target="#metode"><span class="header-section-number">2.0.2</span> Metode</a></li>
   </ul>
 </nav>
     </div>
@@ -232,6 +233,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="assigment-3" class="level3" data-number="2.0.1">
 <h3 data-number="2.0.1" class="anchored" data-anchor-id="assigment-3"><span class="header-section-number">2.0.1</span> Assigment 3</h3>
+</section>
+<section id="metode" class="level3" data-number="2.0.2">
+<h3 data-number="2.0.2" class="anchored" data-anchor-id="metode"><span class="header-section-number">2.0.2</span> Metode</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -261,7 +265,7 @@ The following object is masked from 'package:tidyr':
     extract</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a data frame of known distances and molecular weights</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ladder <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">dist =</span> <span class="fu">c</span>(<span class="fl">34.5</span>, <span class="fl">405.5</span>, <span class="fl">612.5</span>, <span class="fl">930.5</span>, <span class="fl">1016.5</span>, <span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>,<span class="cn">NA</span>), </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ladder <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">dist =</span> <span class="fu">c</span>(<span class="fl">374.5</span>, <span class="fl">396.5</span>, <span class="fl">423.5</span>, <span class="fl">458.5</span>, <span class="fl">496.5</span>, <span class="fl">547.5</span>,<span class="fl">607.5</span>,<span class="fl">688.5</span>,<span class="fl">734.5</span>,<span class="fl">792.5</span>,<span class="fl">860.5</span>,<span class="fl">936.5</span>,<span class="fl">1035.5</span>), </span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                     </span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mw =</span> <span class="fu">c</span>(<span class="dv">1000</span>, <span class="dv">900</span>, <span class="dv">800</span>, </span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>                            <span class="dv">700</span>, <span class="dv">600</span>, <span class="dv">500</span>,</span>
@@ -270,51 +274,46 @@ The following object is masked from 'package:tidyr':
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>            </span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new data frame of unknowns</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>unknown <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">dist =</span> <span class="fu">c</span>(<span class="fl">18.5</span>, <span class="fl">32.5</span>, <span class="fl">608.5</span>, <span class="fl">928.5</span>, <span class="fl">1013.5</span>))</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>unknown <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">dist =</span> <span class="fu">c</span>(<span class="fl">1208.5</span>, <span class="fl">600.5</span>, <span class="fl">18.5</span>, <span class="fl">383.5</span>, <span class="fl">408.5</span>, <span class="fl">436.5</span>, <span class="fl">470.5</span>, <span class="fl">508.5</span>, <span class="fl">559.5</span>, <span class="fl">618.5</span>, <span class="fl">696.5</span>, <span class="fl">742.5</span>, <span class="fl">798.5</span>, <span class="fl">862.5</span>, <span class="fl">935.5</span>, <span class="fl">993.5</span>))</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Fit the model</span></span>
 <span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>cal <span class="ot">&lt;-</span> <span class="fu">lm</span>(<span class="fu">log</span>(mw) <span class="sc">~</span> dist, <span class="at">data =</span> ladder)</span>
 <span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">lm</span>(mw <span class="sc">~</span> dist, ladder)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Check model performance, R^2 should be ~ 1.</span></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Check model performance, R^2 should be ~ 1.</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(cal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
 lm(formula = log(mw) ~ dist, data = ladder)
 
 Residuals:
-       1        2        3        4        5 
--0.03716  0.03882  0.02222  0.04412 -0.06800 
+     Min       1Q   Median       3Q      Max 
+-0.25487 -0.03614  0.00071  0.08134  0.11212 
 
 Coefficients:
-              Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  6.962e+00  5.027e-02 138.482  8.3e-07 ***
-dist        -4.888e-04  7.197e-05  -6.792  0.00653 ** 
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  8.510490   0.091221   93.30  &lt; 2e-16 ***
+dist        -0.004195   0.000135  -31.07 4.56e-12 ***
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
-Residual standard error: 0.05759 on 3 degrees of freedom
-  (8 observations deleted due to missingness)
-Multiple R-squared:  0.9389,    Adjusted R-squared:  0.9186 
-F-statistic: 46.13 on 1 and 3 DF,  p-value: 0.006525</code></pre>
+Residual standard error: 0.1017 on 11 degrees of freedom
+Multiple R-squared:  0.9887,    Adjusted R-squared:  0.9877 
+F-statistic: 965.1 on 1 and 11 DF,  p-value: 4.558e-12</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>preds <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">predict</span>(cal, <span class="at">newdata =</span> unknown))</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(cal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       1        2        3        4        5 
-6.944913 6.763574 6.662396 6.506962 6.464927 </code></pre>
+<pre><code>       1        2        3        4        5        6        7        8 
+6.939579 6.847296 6.734039 6.587225 6.427827 6.213898 5.962217 5.622447 
+       9       10       11       12       13 
+5.429491 5.186199 4.900961 4.582164 4.166890 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>ladder <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(dist, mw)) <span class="sc">+</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(dist, <span class="fu">log</span>(mw))) <span class="sc">+</span> </span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fu">coef</span>(d)[<span class="dv">1</span>], <span class="at">slope =</span> <span class="fu">coef</span>(d)[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 8 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fu">coef</span>(cal)[<span class="dv">1</span>], <span class="at">slope =</span> <span class="fu">coef</span>(cal)[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
