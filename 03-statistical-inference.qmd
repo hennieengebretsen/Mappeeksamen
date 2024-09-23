@@ -1,4 +1,34 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 I’m going back in a few more times and we can see what happens when we go back home and then go back and get a new one for the next # Assignment 3: Drawing inference fof rom statistical models, and statistical power {#assignment3}
 
 This assignment is set up as a statistical laboratory, we will perform simulations and your assignment is to interpret and explain the results. Create a report based on the code used in the lab and make sure you answer the specified questions (1-8). You can be as creative as you want and explore the results further. 
+
+```{r}
+library(tidyverse)
+
+set.seed(1)
+population <- rnorm(1000000, mean = 1.5, sd = 3)
+
+
+samp1 <- data.frame(y = sample(population, 8, replace = FALSE))
+
+samp2 <- data.frame(y = sample(population, 40, replace = FALSE))
+
+
+m1 <- lm(y ~ 1, data = samp1)
+m2 <- lm(y ~ 1, data = samp2)
+
+summary(m1)
+```
+```{r}
+mean(samp1$y)
+coef(m1)
+sd(samp1$y)
+sd(samp1$y) /sqrt(8)
+```
+
 
