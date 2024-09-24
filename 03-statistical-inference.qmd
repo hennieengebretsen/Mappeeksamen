@@ -3,11 +3,16 @@ output: html_document
 editor_options: 
   chunk_output_type: console
 ---
-I’m going back in a few more times and we can see what happens when we go back home and then go back and get a new one for the next # Assignment 3: Drawing inference fof rom statistical models, and statistical power {#assignment3}
 
-This assignment is set up as a statistical laboratory, we will perform simulations and your assignment is to interpret and explain the results. Create a report based on the code used in the lab and make sure you answer the specified questions (1-8). You can be as creative as you want and explore the results further. 
+I’m going back in a few more times and we can see what happens when we go back home and then go back and get a new one for the next \# Assignment 3: Drawing inference fof rom statistical models, and statistical power {#assignment3}
+
+This assignment is set up as a statistical laboratory, we will perform simulations and your assignment is to interpret and explain the results. Create a report based on the code used in the lab and make sure you answer the specified questions (1-8). You can be as creative as you want and explore the results further.
 
 ```{r}
+#| message: false
+#| warning: false
+#| code-fold: true
+
 library(tidyverse)
 
 set.seed(1)
@@ -23,12 +28,14 @@ m1 <- lm(y ~ 1, data = samp1)
 m2 <- lm(y ~ 1, data = samp2)
 
 summary(m1)
-```
-```{r}
+
 mean(samp1$y)
 coef(m1)
 sd(samp1$y)
 sd(samp1$y) /sqrt(8)
 ```
 
+### Oppgave 1
+
+For å forklare SE, t-verdi og p-verdi basert på regresjonsmodellene m1 og m2
 
