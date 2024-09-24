@@ -37,5 +37,9 @@ sd(samp1$y) /sqrt(8)
 
 ### Oppgave 1
 
-For å forklare SE, t-verdi og p-verdi basert på regresjonsmodellene m1 og m2
+
+Ved bruk av regresjonsmodellene lm1 og lm2 skal begrepene estimat, SE (standard error) t-verdi og p-verdi forklares. I regresjonsmodellene lm1 og lm2  det kun den konstante variablen som blir estimert da det ikke er noen uavhengig variabel. Dette vil si at det kun er gjennomsnittet til den konstante variablen som blir estimert, det vil si at den estimerte verdiene til de ulike regresjonsmodellene er gjennomsnittet av det aktuelle utvalget for y i de ulike modellene dette tilsvarer for m1 1.0677 
+
+SE(standard error) er standardfeilen vil være et mål på 
+ 
 
