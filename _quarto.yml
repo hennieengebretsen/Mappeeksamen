@@ -1,8 +1,8 @@
 project:
   type: book
-book:
-  title: "Mappeeksamen IDR4000"
-  author: "Hennie Engebretsen"
+  book:
+ title: "Mappeeksamen IDR4000"
+author: "Hennie Engebretsen"
   date: "2024-09-10"
   chapters:
     - index.qmd
@@ -16,7 +16,6 @@ book:
     - references.qmd
 
 bibliography: resources/bib-final.bib
-
 format: html
 
 
