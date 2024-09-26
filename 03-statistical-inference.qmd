@@ -33,6 +33,7 @@ mean(samp1$y)
 coef(m1)
 sd(samp1$y)
 sd(samp1$y) /sqrt(8)
+
 ```
 
 ### Oppgave 1
