@@ -1,12 +1,10 @@
 ---
 output: html_document
-editor_options: 
+author: Hennie Engebretsen
   chunk_output_type: console
 ---
 
-I’m going back in a few more times and we can see what happens when we go back home and then go back and get a new one for the next \# Assignment 3: Drawing inference fof rom statistical models, and statistical power {#assignment3}
-
-This assignment is set up as a statistical laboratory, we will perform simulations and your assignment is to interpret and explain the results. Create a report based on the code used in the lab and make sure you answer the specified questions (1-8). You can be as creative as you want and explore the results further.
+Assigment 1
 
 ```{r}
 #| message: false
@@ -38,9 +36,20 @@ sd(samp1$y) /sqrt(8)
 
 ### Oppgave 1
 
+Ved bruk av regresjonsmodellene lm1 og lm2 skal begrepene estimat, SE (standard error) t-verdi og p-verdi forklares. I regresjonsmodellene lm1 og lm2 det kun den konstante variablen som blir estimert da det ikke er noen uavhengig variabel. Dette vil si at det kun er gjennomsnittet til den konstante variablen som blir estimert, det vil si at den estimerte verdiene til de ulike regresjonsmodellene er gjennomsnittet av det aktuelle utvalget for y i de ulike modellene dette tilsvarer for m1 1.0677
 
-Ved bruk av regresjonsmodellene lm1 og lm2 skal begrepene estimat, SE (standard error) t-verdi og p-verdi forklares. I regresjonsmodellene lm1 og lm2  det kun den konstante variablen som blir estimert da det ikke er noen uavhengig variabel. Dette vil si at det kun er gjennomsnittet til den konstante variablen som blir estimert, det vil si at den estimerte verdiene til de ulike regresjonsmodellene er gjennomsnittet av det aktuelle utvalget for y i de ulike modellene dette tilsvarer for m1 1.0677 
+SE(standard error) er standardfeilen vil være et mål på hvordan et statisitsk estimat til et utvalg kan variere fra populasjonen. For modellen m1 er standard error 1.25 dette viser at det er noe usikkerhet knyttet til et estimat av gjennomsnittet.
 
-SE(standard error) er standardfeilen vil være et mål på 
- 
+T-verdi kan ses på som en statisitksk verdi hvor langt gjennomsnittet er fra befolkningen. Jo høyere t-verdien er kan
+
+p-verdien sier noe om usikkerheten i trekningen av utvalget
+
+### Oppgave 2
+
+De to ulike modellene får ulike resultater en av grunnene til dette er at det er ulikt utvalg i de to ulike modellene i lm1 er det n =8, mens i lm2 er det n =40. Utvalgsstørrelsen vil ha en innvirkning på resultatene, ved at man har et større utvalg vil den statistiske styrken være høyere og det vil dermed være lettere å kunne oppdage om det vil være en reell effekt en ser. Det samme vil gjelde for standardfeil ved et større utvalg vil standardfeil til gjennomsnittet reduseres, en vil da ha mindre konfidensintervall og estimatene vil kunne bli mer presist. 
+
+
+## Oppgave 3
+
+De mørke skyggeområdene
 
