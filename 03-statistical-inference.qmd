@@ -117,13 +117,7 @@ mean_se_40 <- mean(results_40$se)
 ## Oppgave 5
 
 ```{r}
-#| message: false
-#| warning: false
-#| code-fold: true
-
-library(tidyverse)
-library(pwr)
-library(ggplot2)
+# Example code for copy and paste
 
 # A two facets histogram can be created with ggplot2
 results %>%
@@ -142,10 +136,12 @@ results %>%
 library(pwr)
 
 pwr.t.test(n = 40, sig.level = 0.05, d = 1.5/3, type = "one.sample")
+```
+
 
 ```
 
-\## Oppgave 5
+## Oppgave 5
 
 I de to histogrammene har vi ulike størrelse på utvalget n =8 og n =40. Ved å se på histogrammene ser vi at i utvalget med n = 8 er det et mer spredt fordeling av p-verdiene og at få p-verdier ligger i signifikansområdet. Et mindre utvalg gir lavere statistisk styrke og at det vil være mindre sannsynligheten for å kunne oppdage om et forsøk faktisk gir en effekt, samt at det er større spredning i utvalget som ikke gir en signifikant p-verdi. Ser vi på histogrammet med et utvalg n =40 ligger p-verdiene mer samlet og større del av utvalget ligger i det signifikante området, dette gjør at den statiske styrken er høyere. Ved en høy statistisk styrke og flere signifikante p-verdier gjør at det vil være en høyere sannsynlighet for å kunne oppdage de faktiske effektene.
 
@@ -160,6 +156,7 @@ I de to histogrammene har vi ulike størrelse på utvalget n =8 og n =40. Ved å
 library(tidyverse)
 library(pwr)
 library(ggplot2)
+library(dplyr)
 
 # Count the proportion of tests below a certain p-value for each 
 results %>%
@@ -178,6 +175,92 @@ significant_8 <- sum(results_8$pval < 0.05, na.rm = TRUE)
 significant_40 <- sum(results_40$pval < 0.05, na.rm = TRUE) 
 ```
 
-I utvalget n =8 så er det 227 p-verdier som er under p\<0.05 og n =40 er det 865
+I utvalget n =8 så er det 227 p-verdier som er under p<0.05 og n =40 er det 865
 
 ## Oppgave 7
+
+
+```{r}
+library(pwr)
+effect_size <- 1.5 / 3 
+alpha <- 0.05
+n_8 <- 8 
+power_8 <- pwr.t.test(d = effect_size, n = n_8, sig.level = 0.05, type = "one.sample", alternative = "two.sided")$power
+
+n_40 <- 40
+power_40 <- pwr.t.test(d = effect_size, n = n_40, sig.level = 0.05, type = "one.sample", alternative = "two.sided")$power
+```
+
+
+
+
+
+## Oppgave 8
+
+```{r}
+
+#| message: false
+#| warning: false
+#| code-fold: true
+
+library(tidyverse)
+
+population <- rnorm(1000000, mean = 0, sd = 3)
+
+results_8 <- data.frame(estimate = rep(NA, 1000), 
+                         se = rep(NA, 1000), 
+                         pval = rep(NA, 1000), 
+                         n = 8)
+results_40 <- data.frame(estimate = rep(NA, 1000), 
+                          se = rep(NA, 1000), 
+                          pval = rep(NA, 1000), 
+                          n = 40)
+
+
+for(i in 1:1000) {
+  
+  samp1 <- data.frame(y = sample(population, 8, replace = FALSE))
+  samp2 <- data.frame(y = sample(population, 40, replace = FALSE))
+
+  # Modeller dataene
+  m1 <- lm(y ~ 1, data = samp1)
+  m2 <- lm(y ~ 1, data = samp2)
+  
+  # Ekstraher verdier fra modellene
+  results_8[i, 1] <- coef(summary(m1))[1, 1]
+  results_8[i, 2] <- coef(summary(m1))[1, 2]
+  results_8[i, 3] <- coef(summary(m1))[1, 4]
+
+  results_40[i, 1] <- coef(summary(m2))[1, 1]
+  results_40[i, 2] <- coef(summary(m2))[1, 2]
+  results_40[i, 3] <- coef(summary(m2))[1, 4]
+}
+
+
+results_null <- bind_rows(results_8, results_40)
+
+
+results_null %>%
+  ggplot(aes(pval)) + 
+  geom_histogram() +
+  facet_wrap(~ n)
+
+
+results_null %>%
+  filter(pval < 0.05) %>%
+  group_by(n) %>%
+  summarise(sig_results = n()/1000)
+
+
+false_positive_rate <- results_null %>%
+  filter(pval < 0.05) %>%
+  summarise(false_positives = n()) %>%
+  pull(false_positives) / 2000  
+
+false_positive_rate
+
+
+```
+
+Det er 0,053 av studiene som ville gitt falske positive svar. 
+
