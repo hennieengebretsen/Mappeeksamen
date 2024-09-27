@@ -3,8 +3,10 @@ output: html_document
 author: Hennie Engebretsen
 chunk_output_type: console
 ---
+Assignment 3: Drawing inference from statistical models, and statistical power
 
-Assigment 1
+
+## Oppgave 1
 
 ```{r}
 #| message: false
@@ -34,7 +36,6 @@ sd(samp1$y) /sqrt(8)
 
 ```
 
-### Oppgave 1
 
 Ved bruk av regresjonsmodellene lm1 og lm2 skal begrepene estimat, SE (standard error) t-verdi og p-verdi forklares.
 
