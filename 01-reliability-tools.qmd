@@ -4,7 +4,7 @@ editor_options:
  chunk_output_type: console
 ---
 
-output: html_document editor_options: chunk_output_type: console ---
+
 
 # Assignment 1: Reliability and tools for reproducible data science {#assignment1}
 
