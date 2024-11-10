@@ -1,6 +1,6 @@
 # IDR4000 mappeeksamen
 
-This repository contains the portfolio exam for the course IDR4000 as given at the Inland University of Applied Sciences, Master in Exercise Physiology.
+Denne boken er mappeksamen i IDR4000 i faget Avansert metode og statestikk hos Universitetet i Innlandet. Deler av denne eksamen er gruppearbeid eller selvstendig arbeid. Eksamen er også publisert på git: 
 
 
 
