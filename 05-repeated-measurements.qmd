@@ -249,3 +249,6 @@ legpress.fig <- strengthvolume %>%
 legpress.fig
 
 ```
+
+
+Diskusjon 
