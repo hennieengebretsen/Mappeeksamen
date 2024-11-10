@@ -1,5 +1,5 @@
 project:
-  type: book
+ type: book
 
 book:
   title: "Mappeeksamen IDR4000"
@@ -19,6 +19,7 @@ book:
 bibliography: resources/bib-final.bib
 
 format: html
+
 
 
 

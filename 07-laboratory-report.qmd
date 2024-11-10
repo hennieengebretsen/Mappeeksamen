@@ -1,3 +1,245 @@
+---
+title: "Rapport"
+format: html
+editor: 
+  markdown: 
+    wrap: 72
+editor_options: 
+  chunk_output_type: console
+bibliography: bibliography.bib
+---
+
 # Molecular Laboratory report
 
-Select one laboratory assignment and write a detailed report. 
+1.0 Introduksjon
+
+I forskning finnes det ulike metoder, genekspresjon analyse med
+kvantiativ fulorisens-basert sanntids polymerase kjedereaksjon (qPCR) er
+en av disse og brukes i treningsfysiologien. Målet med qPCR er å studere
+genutrykk til et målgen med bruk av biologisk materiale (Kuang. et.al,
+2018). qPCR kan bli brukt til å kunne måle treningsinduserte endringer i
+genutrykk for muskelfibertype. Forskjellen på qPCR og PCR er at ved bruk
+av qPCR kan man kvantifisere og måle mengden av DNA-sekvenser her og nå
+@kuang2018. For å kunne utføre en PCR må en ha et RNA, dette blir
+ekstrahert fra en biologisk materiale (eks. muskelvev). RNA som blir
+brukt til å kjøre en PCR går igjennom tre ulike steg. Første steget er
+at RNA-et må bli cDNA denne prosessen kalles reversert transkripsjon
+(Kuang et.al, 2018). cDNA vil bli kopiert slik at man har milliarder av
+kopier (Kuang et.al, 2018). DNA-et blir først utsatt for høy temperatur
+slik at den doble DNA tråden blir splittet til en enkeltråd
+(denaturering) [@kuang2018]. Det andre steget er at temperaturen så
+senkes da vil DNA-primere kunne binde seg(annealing). Tredje og siste
+steg er at temperaturen økes slik at primere binder seg og vi får en ny
+dobbelt tråd. Denne prossessen kalles elongering [@kuang2018]. Sykulsen
+vil gjenta seg og repeteres, det vil økes eksponsielt for hver syklus
+[@kuang2018]. Det finnes ulike metoder for å gjennomføre dette en av
+disse metodene er SYBR green-metoden. Her brukes en fulorecens og DNA
+bindes til denne. Vi vil da kunne følge prosessen her og nå. Det vil bli
+tatt et bilde av fluorscensen for hver syklus som kjøres. Siden det tas
+et bilde etter hver syklus kan man detektere fluorecsencen [@kuang2018].
+For hver syklus som kjøres blir c-DNA og fluorscensen doblet og økes
+eksponensielt [@kuang2018]. Det som er målet er å se hvor fort
+fluorecensen når en satt terskelverdi, dette kalles syklisk terskel (CT)
+[@kuang2018]. Denne sykliske terskelen kan si noe om uttrykket til
+genet. Lavere CT- verdier og færre sykluser c-DNA har gått igjennom, er
+en indikasjon på hvor stort utrykk vi har av målgenet [@livak2001].
+
+2.0 Metode Ved start på forsøket fikk vi utdelt ferdig c-DNA fra et
+tidligere gjennomført styrkeprosjekt av labansvarlig. For å kunne kjøre
+en qPCR ble det brukt cDNA og en Master mix. Denne Master mixen besto av
+50 ul SYBR-green, 20 ul H2O og 10 ul primer mix enten (MHC1,MHC2x eller
+MHC2a). Det ble også laget en Master mix som var en kontroll denne
+mestod av 50 ul b2m primermix, 100ul H2O og 250 ul med CYBR-green.
+Forsøket innebar også å lage to fortynningsrekker. Fortynningsrekkene
+var som følger : 1, 1/10 1/100 og 1/1000 samt ½ 1/20 1/200. Det ble
+brukt cmyc primer som ble fortynnet med H2O i 1/1 prøven var det 30ul
+prøve og 0 ul H2O
+
+```{r}
+library(knitr)
+
+fortynning<-data.frame( Fortynning = c("1", "1/10", "1/100", "1/1000", "½", "1/20", "1/200"),
+  Prøve = c(30, 2, 2, 2, 10, 2, 2),
+  H2O = c(0, 18, 18, 18, 10, 18, 18)
+)
+
+kable(fortynning, caption = "Fortynning Tabell")
+
+```
+
+Flytter 2 µl fra rør 1 til 2a, og 10µl fra 1 til 2b, vortex rør 2a+2b.
+
+Flytter 2µl fra 2a til 3a og 2µl fra 2b til 3b, vortex rør 3a+3b.
+
+Flytter 2µl fra 3a til 4a og 2µ fra 3b til 4b, vortex rør 4a + 4b.
+
+```{r}
+library(knitr)
+library(kableExtra)
+
+
+data <- data.frame(
+  Pre_week_0 = c("myhe 1", "myhe 1", "myhe 1", "myhe 2a", "myhe 2a", "myhe 2a", "myhe 2x", "myhe 2x", "myhe 2x", "b2m", "b2m", "b2m"),
+  Post_week_12 = c("myhe 1", "myhe 1", "myhe 1", "myhe 2a", "myhe 2a", "myhe 2a", "myhe 2x", "myhe 2x", "myhe 2x", "b2m", "b2m", "b2m"),
+  cmyc_1 = rep(NA, 12),
+  cmyc_2a = rep(NA, 12),
+  cmyc_3a = rep(NA, 12),
+  cmyc_4a = rep(NA, 12),
+  cmyc_2b = rep(NA, 12),
+  cmyc_3b = rep(NA, 12),
+  cmyc_4b = rep(NA, 12)
+)
+
+
+rownames(data) <- c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L")
+
+
+kable(data, caption = "Tabell: Oversikt over prøver") 
+  
+```
+
+Videre ble prøvene pippetert over i brønner etter pippeteringskartet
+over. Brønene ble fylt med 8ul primer spesifikk prøve samt 2 ul med cDNA
+løsning eller kontrollløsning A- L 1 og 2. Videre ble fortynningsrekkene
+pippetert over i 5-11 A-C. Dette ble utført i et treplat for alle
+prøvene. Videre ble qPCR prøven kjørt i sanntids PCR (Applied Biosytems
+7500 fast Real-TimePCR Systems, Life Technologies AS) ved bruk av Quant
+Studio 5. Prossesen for PCR besto videre av tre ulike steg. Første
+steget er et «Hold stage» der blir tempearaturen økt med 1,99 celcius/ s
+opp til 50 grader. Her blir temperaturen konstant på 50 grader i 2
+minutter før det videre blir økt med 1,99 grader/s opp til 95 grader og
+forblir på 95 grader i 2 minutter. Det neste steget er da selve PCR
+prosessen «PCR stage», som består av 40 sykluser, der én syklus består
+av 1 sek på 95°C og at tempearaturen synker med 1,77 °C//s ned til
+temperaturen når 60 °C hvor en konstant temperatur opprettholdes i
+30sek. Det blir etter hver syklus tatt et bilde av fluorecensen. Siste
+steget kalt «Melt stage» blir temperaturen øker med 1,99 °C/s opp til vi
+når 95°C her blir temperarturen holdt konstant i 15 sekunder. Den blir
+så gradvis senket med 1,77 °C/s til en når 60 grader hvor temperaturen
+blir holdt konstant i 1minutt. Før den igjen økes med 0,15 °C/ s opp til
+95 grader igjen og blir holdt konstant i 15 sekunder. Da er
+PCR-prosessen ferdig og vi videre kunne en hente ut CT-verdier. Når
+CT-verdiene var hentet ut ble de videre databehandlet og gjort
+utregninger med hjelp av Excel, Microsoft Office.
+
+```{r}
+library(knitr)
+library(kableExtra)
+
+
+ct_data <- data.frame(
+  sample_name = c("Control sample W0", "W0", "W12", "W0", "W12", "W0", "W12"),
+  target_name = c("b2m", "MHC I", "MHC I", "MHC 2a", "MHC 2a", "MHC 2x", "MHC 2x"),
+  Ct1 = c(23.427, 18.299, 18.431, 22.419, 18.393, 25.708, 25.120),
+  Ct2 = c(24.072, 19.223, 19.080, 17.707, 18.731, 25.036, 23.575),
+  Ct3 = c(23.318, 19.764, 18.348, 18.314, 35.236, 23.771, 23.052)
+)
+
+
+ct_data$average_Ct <- rowMeans(ct_data[, c("Ct1", "Ct2", "Ct3")])
+
+
+kable(ct_data, 
+      col.names = c("Sample Name", "Target Name", "Ct1", "Ct2", "Ct3", "Average Ct"),
+      caption = "Ct-verdier for de ulike prøvene") %>%
+  kable_styling("striped", full_width = FALSE) %>%
+  column_spec(1:6, bold = FALSE) %>%
+  add_header_above(c(" ", "Ct Data" = 5)) 
+
+```
+
+Tallene viser til antall sykluser før syklisk terskel (CT) er nådd. CT
+verdiene verdier for å nå syklisk terskel har endret seg fra uke 0 til
+uke 12. For MHC1 har det endret seg fra et gjennomsnitt på 19,09 -18,62
+sykluser. For MHC2a har det endret seg fra 19,48 -24,12 og for MHC 2x
+fra 24,83-23,91. Et lavere antall sykluser et større genutrykk.
+
+```{r}
+library(knitr)
+library(kableExtra)
+
+
+gen_expression <- data.frame(
+  time_point = c("Uke 0", "Uke 12"),
+  MHC1 = c(56, 95),
+  MHC2a = c(43, 2),
+  MHC2x = c(1, 2)
+)
+
+
+kable(gen_expression, 
+      col.names = c("Uke", "MHC1", "MHC2a", "MHC2x")) %>% 
+  kable_styling("striped", full_width = FALSE) %>% 
+  column_spec(1, bold = TRUE) %>%  
+  add_header_above(c(" " = 1, "Prosentvis fordeling av genuttrykk" = 3))  
+
+```
+
+Vi ser at mengden genuttrykk for muskelfibertype 2a (MHC-2a) har sunket
+fra 43% til 2% etter 12 uker, det har også vært en reduksjon for
+muskelfibertype 2x (MHC-2x) fra 2% til 1%. Muskelfibertype 1 (MHC1) har
+derimot økt fra 56% til 95%.
+
+```{r}
+library(knitr)
+library(kableExtra)
+
+primer_efficiency <- data.frame(
+  slope = -2.4774046,
+  primer_eff = 153.31
+)
+
+kable(primer_efficiency, 
+      caption = "Primer Efficiency Results", 
+      col.names = c("Slope", "Primer Efficiency")) %>%
+  kable_styling("striped", full_width = FALSE) %>%
+  column_spec(1, bold = TRUE) 
+```
+
+4.0 Diskusjon[@andersen2000]
+
+Målet med dette forsøket var å undersøke endringer i myoisintungkjedene.
+Etter en styrketreningsintevesjon på utrent forsøksperson på 12 uker,
+ved hjelp av fluoricens- basert sanntids kvantitativ polymerase
+kjedereaksjon (qPCR).
+
+Det har i dette forsøket blitt undersøkt hvor mange sykluser CT-verdiene
+til den ulike myoisintungkjedene trenger for å nå sin terskelverdi. Der
+færre sykluser og lavere CT verdier indikerer et størrre genutrykk. I
+våre resulatater har vi sett en endring for alle myosintunkjedene når
+det gjelder antall sykluser myoisnkjedene har trengt for å nå sin
+CT-verdi og den prosentvise endringen for tungkjedene indikerer at vi
+har fått en stor endring fra 56%- 95% for MHCI, for MHC2a har det blitt
+redusert fra 43% til 2%, det samme gjelder for MHC2x som har fått en
+reduksjon fra 2%-1%.
+
+I en tidligere studie av Ellefsen et al. (2014),[@ellefsen2014] hvor en
+styrketreningsintervensjon ble gjennomført på utrente individer over 12
+uker, ble det observert en økning i MHC2A, en reduksjon i MHC2X, samt
+stabilitet i MHC1. I kontrast til dette viser våre resultater
+motstridende funn, med både reduksjon i MHC2A og MHC2X, samt en
+betydelig økning i MHC1. Andre studier, som [@terzis2008] Terzis et al.
+(2008) og @andersen2000 også vist at utrente personer med overvekt av
+MHC2X opplever en reduksjon i MHC2X og en økning i MHC2A ved trening,
+med minimal endring i MHC1. Det er kjent at genuttrykk ikke kan endres
+fra MHC1 til MHC2A eller MHC2X, noe som gjør det vanskelig å forklare de
+resultatene vi har fått fra analysen av myosintungkjeder. Dette reiser
+spørsmål om hva som kan ha skjedd under vår analyse og om det er
+spesifikke faktorer ved vårt eksperiment som kan ha bidratt til disse
+avvikene fra tidligere forskning.
+
+Det som en kan reise en usikkerhet om er om både pippetringferdigheter
+og primerkvaliteten har vært god nok enten at primer har gått ut på dato
+eller bruk av feil primer. Primer efficency skulle ligge mellom 90-110%.
+I vårt tilfelle fikk vi en efficency på 153% noe som kan tyde på at det
+kan være menneskelige feil som har påvirket resulatet. Det er også
+vanskelig å skulle trekke slutninger basert på en prøve. Samt at vi har
+ingen forkunnskap om hvilket treningsstimuli forsøkspersonen vi har fått
+har vært utsatt for, annet enn den informasjonen vi har fått fra
+labansvarlig.
+
+5.0 Konklusjon
+
+Basert på funn vi har fått i forsøket kan vi ikke si noe om endringene i
+myiosntungkjedene for denne forsøkspersonen. Da resultatene vi har fått
+ikke er mulig basert på det vi kjenner til av tidligere forskning.

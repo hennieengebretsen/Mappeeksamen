@@ -2,43 +2,116 @@
 output: html_document
 editor_options: 
   chunk_output_type: console
+  echo: false 
 ---
-# Assignment 5: Analyzing repeated measures experiments {#assignment5}
 
-## Assignment overview
+# 5.1 Introduksjon
 
-In this assignment you will analyse and report on trial investigating the effect of resistance training volume on lean mass and muscle strength. The data are part of the `exscidata` package and can be accessed as `data("strengthvolume")` and `data("dxadata")`. Read the [instructions carefully](https://dhammarstrom.github.io/quant-methods-workshops/assignment-5.html)!
+Styrketrening har som hovedmål å oppnå eller opprettholde muskelstyrke og muskelmasse, og dette kan variere avhengig av individuelle behov, treningsbakgrunn og mål. For de fleste er imidlertid det overordnede målet å forbedre fysisk helse ved å styrke musklene og øke muskelmassen. Hos personer som er utrente, viser forskning at styrketrening kan føre til en økning på mellom 0,1-0,5 % i muskelfibertverrsnitt og en økning på omtrent 1 % i muskelstyrke per treningsøkt de første 8-12 ukene med trening [@wernbom2007]. Disse tidlige gevinstene skyldes primært neuromuskulær tilpasning, der kroppen lærer å rekruttere flere muskelfibre og forbedre koordinasjonen mellom nervesystemet og musklene.
 
+Selv om styrketrening har betydelige helsefremmende fordeler, er det mange som nedprioriterer denne treningsformen på grunn av tidsmangel i en hektisk hverdag. Dette er et økende problem, spesielt når en stor del av befolkningen har stillesittende jobber og en inaktiv livsstil. Den manglende fysiske aktiviteten er en alvorlig trussel mot folkehelsen og øker risikoen for flere kroniske sykdommer som hjerte- og karsykdommer, diabetes og fedme. Videre kan lav fysisk aktivitet føre til redusert muskelmasse og styrke, noe som har negative konsekvenser for funksjonell helse, spesielt blant eldre voksne.
 
-> Below you will find a basic outline of the report and example code that we worked on in class.
+Forskning viser at muskelmasse og muskelstyrke reduseres betydelig etter fylte 50 år, en prosess kjent som sarkopeni, som kan føre til redusert mobilitet, dårligere balanse og økt risiko for skader [@deschenes2004 ;@janssen2000]. Tap av muskelmasse med økende alder er en naturlig prosess, men styrketrening kan motvirke denne utviklingen og bidra til at eldre voksne opprettholder eller til og med øker muskelmassen. Studier som Roth et al. (2001)[@roth2001] har vist at styrketrening har en positiv innvirkning på både muskelmasse og styrke, selv blant eldre voksne. Dette understreker viktigheten av å prioritere styrketrening som en del av helsefremmende tiltak, spesielt i lys av den aldrende befolkningen.
 
-## Introduction
+Med økende levealder i befolkningen blir det stadig viktigere å legge til rette for at enkeltindivider har de beste forutsetningene for god helse gjennom hele livet. Styrketrening kan spille en avgjørende rolle i dette, ved å forbedre muskelstyrken, redusere risikoen for fall og beinbrudd, og bidra til økt funksjonell kapasitet i dagliglivet. Det er derfor essensielt å finne treningsformer som er effektive og realistiske for folk i ulike aldre og livssituasjoner.
 
-## Methods
+For å gjøre fysisk aktivitet mer tilgjengelig for folk med travle hverdager, er det viktig å utvikle effektive treningsmetoder som gir gode resultater uten at det tar for mye tid. Et spørsmål som har blitt mye undersøkt, er om det er noen forskjell på effekten av å trene med ett sett versus tre sett. Flere studier har sammenlignet disse treningsvolumene for å vurdere hvilken tilnærming som gir best muskelstyrkeutvikling.
 
-### Participants and study overview
+En metaanalyse av Rhea et al. (2002) [@rhea2002]konkluderte med at personer som trente med tre sett per øvelse opplevde en signifikant større økning i muskelstyrke sammenlignet med de som trente med bare ett sett. Dette støttes også av forskning fra Rønnestad et al. (2007)[@rønnestad2007], som fant at det å trene tre sett hadde større effekt på muskelstyrken enn å trene ett sett.
 
-### Muscle strength and hypertrophy
+Basert på den eksisterende kunnskapen om effekten av styrketrening, spesielt med tanke på treningsvolum, har denne studien som mål å undersøke om det er en forskjell i muskelstyrke og muskelmasse hos individer i alderen 18-40 år som trener enten ett sett eller tre sett på beina. Resultatene kan gi verdifull innsikt i hvorvidt forskjellige treningsvolumer påvirker styrke- og muskelmasseøkning.
 
-### Data analysis and statistics
+# 5.2 Metode
 
-## Results
+Det ble rekruttert 41 mannlige- og kvinnelige deltagere til studien. For å kunne delta i studien måtte man være mellom 18-40 år og ikke røyker. Eksklusjonskriteriene var at du ikke kunne ha trent mer enn en ukentlig styrketreningsøkt det siste året. Ikke ha nedsatt muskelstyrke relatert til en tidligere eller enn nåværende skade. Gå på medisiner som kan påvirke adaptasjoner til trening, eller være allergisk mot lokalbedøvelse.
+
+Etter intervensjonstart ble sju (n=7) ekskludert fra videre datanalyser grunnet at de ikke hadde gjennomført mer enn 85% av treningsøktene i intervensjonen.
 
 ```{r}
-#| label: "Load packages and data"
+#| echo: false
+#| message: false
+
+library(exscidata)
+data("dxadata"); data("strengthvolume")
+library(tidyverse)
+library(gt)
+library(dplyr)
+# TABELL DELTAKERE
+
+dxadata %>%
+  select(participant, time, sex, include:weight) %>%
+  filter(time == "pre") %>%
+  group_by(sex, include) %>%
+  mutate(n = n()) %>%
+
+  pivot_longer(names_to =  "variable", 
+               values_to = "value", 
+               cols = age:n) %>%
+  group_by(sex, include, variable) %>%
+  summarise(m = mean(value), 
+            s = sd(value)) %>%
+  ungroup() %>%
+  mutate(m = signif(m, digits = 3), 
+         s = signif(s, digits = 2), 
+         ms = if_else(variable == "n", as.character(m), paste0(m, " (", s, ")")), 
+         sex_incl = paste(sex, include, sep = "_")) %>%
+  dplyr::select(-m, -s, - sex, -include) %>%
+
+  pivot_wider(names_from = sex_incl, 
+              values_from = ms) %>%
+  select(variable, female_incl, female_excl, male_incl, male_excl) %>%
+  mutate(variable = factor(variable, levels = c("n", "age", "weight", "height"), 
+                           labels = c("Antall", "Alder", "Vekt (kg)", 
+                                      "Høyde (cm)"))) %>%
+  arrange(variable) %>%
+  
+  gt() %>%
+  tab_footnote(footnote = "Verdiene er presentert som gjennomsnitt og standardavvik") %>%
+  tab_spanner(label = "Kvinner", columns = c("female_incl", "female_excl")) %>%
+  tab_spanner(label = "Menn", columns = c("male_incl", "male_excl")) %>%
+  cols_label(variable = " ", 
+             female_incl = "Inkludert", 
+             female_excl = "Ekskludert", 
+             male_incl = "Inkludert", 
+             male_excl = "Ekskludert")
+
+
+
+```
+
+# 5.2.1 Styrketrening
+
+Intervensjonen var et 12-ukers  styrketrening av hele kroppen. Underekstremitetene ble trent unilateralt for å kunne tillate differensiering av treningsvolum innad for deltageren. Beina ble tilfeldig og randomisert om det skulle utføres ett vs. tre sett motstandstrening. Hver forsøksperson utførte begge protokollene altså ett vs. tre sett. Muskelstyrke ble videre testet ved intervensjonsstart (baseline), etter uke 3, 5, 9 og ved intervensjonsslutt. Kroppssammensetningen til forsøkspersonene ble målt ved baseline (pre) og ved intervensjonslutt (post).  
+
+# 5.2.3 Testprotokoll
+
+Maksimalstyrke ble testet som en én reptisjon-maksimaltest (1RM) i unilateralbenpress. Det ble gjennomført en standardisert- og øvelse spesifikk oppvarming der det ble kjørt 10 repetisjoner på 50%, 6 repetisjoner på 75% og 2 repetisjoner på forventet 1RM. Videre ble 1 RM testet ved at vekten økte gradvis til det ikke kunne utføres en benpress etter protokollført standard 4-6 forsøk per forsøksperson. Høyeste vekt som forsøkspersonen klarte ble notert og satt som 1RM
+
+Kroppssammensetningen ble målt ved bruk av Dual-Energy røntgenabsorptimetri (DXA) (Lunar Prodgigy, GE healthcare) etter standardprotokoll. På forhånd før DXA ble forsøkspersonen informert om å faste i 2timer før test, samt å ikke gjennomføre hard fysisk aktivitet 48 timer før test.
+
+# 5.3 Resultater
+
+Det er blitt kjørt en parret t-test for å kunne se på differansen mellom det å gjøre et versus tre sett på beina på maksimal styrke ved unlatiral beinpress. Det gjøres også en grafisk fremstilling som skal illustrere forskjellen mellom ett og tre sett. Analyse programmet som er brukt er R studio for å analysere all data.  
+
+```{r}
+#| label: "Endring i leanmass"
 #| warning: false
 #| message: false
 #| echo: false
 #| output: false
+#| include: false
+
+library(tidyverse)
+library(exscidata)
+library(lme4)
+exscidata::dxadata
+exscidata::strengthvolume
 
 
-
-library(tidyverse); library(exscidata)
+library(tidyverse)
+library(exscidata)
 library(lme4)
 
-
-## Import data set, extract leg lean mass per leg and remove observations
-# that are include == "excl".
 
 leanmass <- dxadata %>%
   select(participant:include, lean.left_leg, lean.right_leg) %>%
@@ -49,199 +122,130 @@ leanmass <- dxadata %>%
          sets = if_else(multiple == leg, "multiple", "single")) %>%
   select(participant, time, sex, include, sets, leg, lean.mass) %>%
   filter(include == "incl") %>%
-  
-  ## Change levels for time and sets
   mutate(time = factor(time, levels = c("pre", "post")), 
          sets = factor(sets, levels = c("single", "multiple")), 
          leg = paste0(participant, leg)) %>%
-  
   print()
 
-
-# Create a wide data set of change scores per volume condition
-# suitable for a t-test
 leanmass_change_wide <- leanmass %>%
   pivot_wider(names_from = time, values_from = lean.mass) %>%
   mutate(change = post - pre) %>%
-  
   select(participant, sex, sets, change) %>%
-  pivot_wider(names_from = sets, 
-              values_from = change) %>%
-  
+  pivot_wider(names_from = sets, values_from = change) %>%
   mutate(diff = multiple - single) %>%
-  
   print()
 
 
-leanmass_change_wide_time <- leanmass %>%
-  pivot_wider(names_from = time, values_from = lean.mass) %>%
-
-  select(participant, sex, sets, pre, post) %>%
-  
-  print()
+leanmass_change_wide$multiple <- as.numeric(leanmass_change_wide$multiple)
+leanmass_change_wide$single <- as.numeric(leanmass_change_wide$single)
 
 
+leanmass_change_wide_clean <- leanmass_change_wide %>%
+  filter(!is.na(multiple) & !is.na(single))
 
 
-## Do a t-test on change scores per condition. 
-
-## Alternatives (paired, equal variation)
-tt1 <- with(leanmass_change_wide, t.test(multiple, single, paired = TRUE))
-
-## The same model but with lm
-m1 <- lm(diff ~ 1, data = leanmass_change_wide)
-
-summary(m1)
+tt1 <- t.test(leanmass_change_wide_clean$multiple, 
+              leanmass_change_wide_clean$single, 
+              paired = TRUE)
 
 
-
-
-### Mixed effects model
-# A mixed effects model allowing for a random slope for time is very similar 
-# to the t-test used above. 
-
-m2 <- lmer(lean.mass ~ time * sets +( 1 + time |participant), 
-           data = leanmass)
-
-# Check the summary 
-summary(m2)
-# Check assumptions of equal residual variance
-plot(m2)
-
-## Mixed-Effects ANCOVA
-
-# The lm model does not contain information on multiple
-# observations per participant
-m3 <- lm(post ~ pre + sets, data = leanmass_change_wide_time)
-
-
-# A more correct model also include random intercepts per 
-# participant. Mixed effects ANCOVA mnodel:
-m4 <- lmer(post ~ pre + sets + (1|participant), 
-           data = leanmass_change_wide_time)
-
-
-summary(m3)
-
-summary(m4)
-
-
-
-### How to extract data from a model:
-
-# m1 is a linear model of difference in differences
-# we can use it for inference, extract average diff and confidence 
-# intervals and p-value
-
-# Save all elements of inline results
-m1pval <- round(coef(summary(m1))[1, 4], 3)
-m1est <- round(coef(summary(m1))[1, 1], 1)
-
-m1ciu <- round(confint(m1)[1,2], 1)
-m1cil <- round(confint(m1)[1,1], 1)
-
-# Combine into an object
-m1results <- paste0(m1est, 
-                    ", 95% CI: [",
-                    m1cil, 
-                    ", ",
-                    m1ciu, 
-                    "], p = ",
-                    m1pval
-                    )
-
-
-
+tt1$p.value  
+tt1$conf.int  
 
 
 ```
-
-The average difference in lean mass changes between sets were `r m1results`.
-
-
 
 ```{r}
 
-## Time points in strength data set
-
-strengthvolume %>%
-  distinct(exercise)
-
-
-
-## Exploratory plot of strength data 
-
-str <- strengthvolume %>%
-  filter(include == "incl") %>%
-  mutate(time = factor(time, levels = c("pre", "session1", 
-                                        "week2", "week5", 
-                                        "week9", "post"))) %>%
-  print()
-
-
-str %>%
-  ggplot(aes(time, 
-             load, 
-             group = paste(participant, sets), 
-             color = sets)) + 
-  geom_line() + 
-  facet_wrap(~ exercise, scales = "free")
-  
-
-## How many measurements per participant
-
-str %>%
-  filter(!is.na(load)) %>%
-  group_by(participant, exercise, sets) %>%
-  summarise(n = n() ) %>%
-  ggplot(aes(n, participant, color = sets)) +
-  geom_point() + 
-  facet_wrap(~ exercise) + 
-  theme(axis.text.y = element_blank())
-
-
-
-## Use pre and post data 
-# Combine pre data prior to data analysis
-# per exercise, leg, participant, and sets
-
-str %>%
-  mutate(time = if_else(time %in% c("pre", "session1"), "pre", time)) %>%
-  
+lean.fig <- dxadata %>%
+  select(participant:include, lean.left_leg, lean.right_leg) %>%
+  pivot_longer(names_to = "leg", 
+               values_to = "lean.mass", 
+               cols = lean.left_leg:lean.right_leg) %>%
+  mutate(leg = if_else(leg == "lean.left_leg", "L", "R"), 
+         sets = if_else(multiple == leg, "multipe", "single")) %>%
+  select(participant, time, sex, include, sets, leg, lean.mass) %>%
   filter(time %in% c("pre", "post")) %>%
-  
-  summarise(load = max(load, na.rm = TRUE), 
-            .by = c(participant, 
-                    sex, 
-                    time, 
-                    sets,
-                    exercise,
-                    leg)) %>%
-  
-  print()
+  group_by(time, sets) %>%
+  summarise(m = mean(lean.mass)) %>%
+  mutate(time = factor(time, levels = c("pre", "post"))) %>%
+  ggplot(aes(time, m, color = sets,
+             group = sets)) + geom_line() +
+  labs(x= "Tidspunkt",
+       y = "Lean mass (g)",
+       colour = "Volum",
+       title = "Endring i lean mass",
+       caption = "Figuren viser gjennomsnittlig endring i lean mass i beina fra pre til post")
 
-
-
-
-
-
-
-
-
-
+lean.fig
 
 ```
 
 
+```{r}
+library(tidyverse)
+library(exscidata)
+#| label: t-test strength
+#| echo: false
+#| include: false
+
+strength <- strengthvolume %>%
+  filter(include == "incl") %>%
+  mutate(time = factor(time, levels =c("pre","post"))) %>%
+  mutate(time = if_else(time %in% c("pre", "session1"),
+                        "pre", time)) %>%
+  filter(time %in% c("pre", "post"),
+         exercise == "legpress") %>%
+  summarise(load = mean(load, na.rm = TRUE),
+            .by = c(participant,
+                    sex,
+                    time,
+                    sets,
+                    exercise,
+                    leg)) 
+
+strength.ttest <- strength %>%
+  pivot_wider(names_from = time, values_from = load) %>%
+  mutate(change = post - pre) %>%
+  select(participant, sex, sets, change) %>%
+  pivot_wider(names_from = sets, 
+              values_from = change) %>%
+  mutate(diff = multiple - single)
 
 
+tt.strength <- with(strength.ttest, t.test(multiple, single, paired = TRUE))
 
-## Discussion
+p.strength <- round(tt.strength$p.value, 3)
 
-## Conclusion
+```
 
-
-
-
+```{r}
 
 
+legpress.fig <- strengthvolume %>%
+  
+  select(participant, time, sex, include, sets, exercise, load) %>%
+  
+  filter(exercise == "legpress") %>%
+  
+  
+  filter(time %in% c("pre", "post")) %>%
+  
+  group_by(time, sets) %>%
+ 
+  summarise(m = mean(load, na.rm = TRUE)) %>%
+ 
+  mutate(time = factor(time, levels = c("pre", "post"))) %>%
+  ggplot(aes(time, m, color = sets, group = sets)) + 
+  geom_line() +  
+  labs(x = "Tidspunkt", 
+       y = "Belastning (kg)", 
+       colour = "Volum", 
+       title = "Endring i Beinpress Belasting fra Pre til Post", 
+       caption = "Figuren viser gjennomsnittlig endring i belastning i beinpress fra pre til post") + 
+  theme_minimal()  
+
+
+legpress.fig
+
+```
