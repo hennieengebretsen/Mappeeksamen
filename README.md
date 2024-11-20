@@ -1,6 +1,8 @@
-# IDR4000 portfolio exam template
+# IDR4000 mappeeksamen
 
-This repository contains the portfolio exam template for the course IDR4000 as given at the Inland University of Applied Sciences, Master in Exercise Physiology.
+Denne boken er mappeksamen i IDR4000 i faget Avansert metode og statestikk hos Universitetet i Innlandet. Deler av denne eksamen er gruppearbeid eller selvstendig arbeid. Eksamen er også publisert på git: 
 
-Use the template by forking this repository to your own user and clone it into a fresh local RStudio project. See the [course notes](https://dhammarstrom.github.io/quant-methods-workshops/) for details.
+
+
+The template by forking this repository to your own user and clone it into a fresh local RStudio project. See the [course notes](https://dhammarstrom.github.io/quant-methods-workshops/) for details.
 
