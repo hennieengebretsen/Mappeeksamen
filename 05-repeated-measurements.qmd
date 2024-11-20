@@ -81,7 +81,7 @@ dxadata %>%
 
 # 5.2.1 Styrketrening
 
-Intervensjonen var et 12-ukers  styrketrening av hele kroppen. Underekstremitetene ble trent unilateralt for å kunne tillate differensiering av treningsvolum innad for deltageren. Beina ble tilfeldig og randomisert om det skulle utføres ett vs. tre sett motstandstrening. Hver forsøksperson utførte begge protokollene altså ett vs. tre sett. Muskelstyrke ble videre testet ved intervensjonsstart (baseline), etter uke 3, 5, 9 og ved intervensjonsslutt. Kroppssammensetningen til forsøkspersonene ble målt ved baseline (pre) og ved intervensjonslutt (post).  
+Intervensjonen var et 12-ukers  styrketrening intervensjonv av hele kroppen. Underekstremitetene ble trent unilateralt for å kunne tillate differensiering av treningsvolum innad for deltageren. Beina ble tilfeldig og randomisert om det skulle utføres ett vs. tre sett motstandstrening. Hver forsøksperson utførte begge protokollene altså ett vs. tre sett. Muskelstyrke ble videre testet ved intervensjonsstart (baseline), etter uke 3, 5, 9 og ved intervensjonsslutt. Kroppssammensetningen til forsøkspersonene ble målt ved baseline (pre) og ved intervensjonslutt (post).  
 
 # 5.2.3 Testprotokoll
 
