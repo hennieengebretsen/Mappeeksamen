@@ -1,68 +1,89 @@
 ---
 output: html_document
-author: Hennie Engebretsen
-chunk_output_type: console
+editor_options: 
+  chunk_output_type: console
 ---
-Assignment 3: Drawing inference from statistical models, and statistical power
+# Assignment 3: Drawing inference from statistical models, and statistical power {#assignment3}
 
+This assignment is set up as a statistical laboratory, we will perform simulations and your assignment is to interpret and explain the results. Create a report based on the code used in the lab and make sure you answer the specified questions (1-8). You can be as creative as you want and explore the results further. 
 
-## Oppgave 1
 
 ```{r}
-#| message: false
+#| echo: false
+#| label: "Standardscript for pakker"
 #| warning: false
-#| code-fold: true
+#| message: false
 
+
+library(readxl)
+library(tidyr)
+library(exscidata)
 library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(magrittr)
+library(gt)
+library(ggtext)
+library(pwr)
 
-set.seed(1)
-population <- rnorm(1000000, mean = 1.5, sd = 3)
-
-
-samp1 <- data.frame(y = sample(population, 8, replace = FALSE))
-
-samp2 <- data.frame(y = sample(population, 40, replace = FALSE))
-
-
-m1 <- lm(y ~ 1, data = samp1)
-m2 <- lm(y ~ 1, data = samp2)
-
-summary(m1)
-
-mean(samp1$y)
-coef(m1)
-sd(samp1$y)
-sd(samp1$y) /sqrt(8)
 
 ```
 
 
 
 
-Et estimat representererer gjennomsnittet av det vi har målt i utvalget. Det vil i lm1 og lm2 estimat gjennomsnitt på den ene variablen (y) i de to ulike utvalgene. 
 
-SE(standard error) er standardfeilen vil være et mål på hvordan et statisitsk estimat til et utvalg kan variere fra populasjonen. For modellen m1 er standard error 1.25 dette viser at det er noe usikkerhet knyttet til et estimat av gjennomsnittet.
+```{r}
+#| echo: false
 
-T-verdi kan ses på som en statisitksk verdi hvor et forhold mellom estimatet og stndardfeilen. 
 
-P-verdi sier noe om hvis vi skulle gjentatt forsøket igjen om sannsynligheten om vi da vile fått et resultat som er like ekstremt eller mer ekstremt enn det vi har observert. I denne modellen har vi fått en verdi som er høyere enn p <0.05 som vil si at vi ikke kan forkaste den null-hypotesen vi har.  
 
-### Oppgave 2
+
+set.seed(1)
+population <- rnorm(1000000, mean = 1.5, sd = 3)
+
+samp1 <- data.frame(y = sample(population, 8, replace = FALSE))
+samp2 <- data.frame(y = sample(population, 40, replace = FALSE))
+
+m1 <- lm(y ~ 1, data = samp1)
+m2 <- lm(y ~ 1, data = samp2)
+
+# Skjul summary-output
+invisible(summary(m1))
+invisible(summary(m2))
+
+
+
+
+
+```
+
+
+
+## Spørsmål:
+
+Et estimat representerer gjennomsnittet av det vi har målt i utvalget. Det vil i lm1 og lm2 estimat gjennomsnitt på den ene variablen (y) i de to ulike utvalgene. 
+
+SE (standard error) er standardfeilen vil være et mål på hvordan et statistisk estimat til et utvalg kan variere fra populasjonen. For modellen m1 er standard error 1.25 dette viser at det er noe usikkerhet knyttet til et estimat av gjennomsnittet.
+
+T-verdi kan ses på som en statistisk verdi hvor et forhold mellom estimatet og standardfeilen. 
+
+P-verdi sier noe om hvis vi skulle gjentatt forsøket igjen om sannsynligheten om vi da ville fått et resultat som er like ekstremt eller mer ekstremt enn det vi har observert. I denne modellen har vi fått en verdi som er høyere enn p <0.05 som vil si at vi ikke kan forkaste den null-hypotesen vi har.  
+
 
 De to ulike modellene får ulike resultater en av grunnene til dette er at det er ulikt utvalg i de to ulike modellene i lm1 er det n =8, mens i lm2 er det n =40. Utvalgsstørrelsen vil ha en innvirkning på resultatene, ved at man har et større utvalg vil den statistiske styrken være høyere og det vil dermed være lettere å kunne oppdage om det vil være en reell effekt en ser. Det samme vil gjelde for standardfeil ved et større utvalg vil standardfeil til gjennomsnittet reduseres, en vil da ha mindre konfidensintervall og estimatene vil kunne bli mer presist.
 
-## Oppgave 3
+De mørke skyggeområdene til modellen viser de mer "ekstreme" tilfellene og jo lengre ut på de mørke områdene man kommer, vil de resultatene være mindre sannsynlig å se.
 
-De mørke skyggeområdene til modellen viser de mer "ekstreme" og at vi da kan forkaste null-hypotesen.
 
-## Oppgave 4
+
+
+
 
 ```{r}
+#| code-fold: true
 #| message: false
 #| warning: false
-#| code-fold: true
-
-library(tidyverse)
 
 # Create data frames to store the model estimates
 results_8 <- data.frame(estimate = rep(NA, 1000), 
@@ -105,140 +126,163 @@ for(i in 1:1000) {
 
 results <- bind_rows(results_8, results_40)
 
+# Calculate standard deviation of the estimate and the average of the standard error (se)
+results_summary <- results |> 
+  group_by(n) |> 
+  summarise(
+    sd_estimate = sd(estimate),
+    avg_se = mean(se)
+  )
+
+
+sd_est_8 <- sd(results$estimate[results$n == 8])
+avg_se_8 <- mean(results$se[results$n == 8])
+
+sd_est_40 <- sd(results$estimate[results$n == 40])
+avg_se_40 <- mean(results$se[results$n == 40])
+
+rounded_sd_est_8 <- round(sd_est_8, 2)
+rounded_avg_se_8 <- round(avg_se_8, 2)
+rounded_sd_est_40 <- round(sd_est_40, 2)
+rounded_avg_se_40 <- round(avg_se_40, 2)
+
 
 ```
 
+### Standard deviation of **estimate** and avg. **se** for each study. 
+
+
+Grunnen til at tallene er såpass like som de er for **SD** og **avg se** er at begge beregningene er mål på variasjon. I denne sammenhengen er standardfeilen et mål på hvor mye utvalgsgjennomsnittet forventes å avvike fra det sanne populasjonsgjennomsnittet.
+
+### P-value histogram
+
 ```{r}
-#| message: false
-#| warning: false
 #| code-fold: true
-sd_est_8 <- sd (results_8$estimate)
-mean_se_8 <- mean(results_8$se)
+#| label: "P-verdi histogram SS8"
 
-sd_est_40 <- sd (results_40$estimate)
-mean_se_40 <- mean(results_40$se)
+ggplot(results[results$n == 8, ], aes(x = pval)) +
+  geom_histogram(binwidth = 0.05, fill = "blue", alpha = 0.6) +
+  labs(title = "P-verdier fordeling til samplesize 8",
+       x = "P-verdier",
+       y = "frekvens") +
+  theme_minimal()
+
 
 ```
 
-Vi får ganske like tall i modellene for sd og mean er at beregningene er et mål på variasjonen, vi ser at i disse to utvalgene at det er forholdsvis likt er fordi det er en beregning på variasjon. 
+Histrogrammet for en utvalgstørrelse på 8, ser vi at det er et flertall av obervasjoner med høye p-verdier. Dette henger sammen med lave statistiske poweren og liten utvalgstørrelse
 
-## Oppgave 5
+
+
 
 ```{r}
-# Example code for copy and paste
-
-# A two facets histogram can be created with ggplot2
-results %>%
-  ggplot(aes(pval)) + 
-  geom_histogram() +
-  facet_wrap(~ n)
-
-
-# Count the proportion of tests below a certain p-value for each 
-results %>%
-  filter(pval < 0.05) %>%
-  group_by(n) %>%
-  summarise(sig_results = n()/1000)
-
-# Using the pwr package
-library(pwr)
-
-pwr.t.test(n = 40, sig.level = 0.05, d = 1.5/3, type = "one.sample")
-```
-
-
-```
-
-## Oppgave 5
-
-I de to histogrammene har vi ulike størrelse på utvalget n =8 og n =40. Ved å se på histogrammene ser vi at i utvalget med n = 8 er det et mer spredt fordeling av p-verdiene og at få p-verdier ligger i signifikansområdet. Et mindre utvalg gir lavere statistisk styrke og at det vil være mindre sannsynligheten for å kunne oppdage om et forsøk faktisk gir en effekt, samt at det er større spredning i utvalget som ikke gir en signifikant p-verdi. Ser vi på histogrammet med et utvalg n =40 ligger p-verdiene mer samlet og større del av utvalget ligger i det signifikante området, dette gjør at den statiske styrken er høyere. Ved en høy statistisk styrke og flere signifikante p-verdier gjør at det vil være en høyere sannsynlighet for å kunne oppdage de faktiske effektene.
-
-## Oppgave 6
-
-```{r}
-
-#| message: false
-#| warning: false
 #| code-fold: true
+#| label: "P-verdi histogram SS40"
 
-library(tidyverse)
-library(pwr)
-library(ggplot2)
-library(dplyr)
-
-# Count the proportion of tests below a certain p-value for each 
-results %>%
-  filter(pval < 0.05) %>%
-  group_by(n) %>%
-  summarise(sig_results = n()/1000)
-
-# Using the pwr package
-library(pwr)
-
-pwr.t.test(n = 40, sig.level = 0.05, d = 1.5/3, type = "one.sample")
+ggplot(results[results$n == 40, ], aes(x = pval)) +
+  geom_histogram(binwidth = 0.05, fill = "lightblue", alpha = 0.6) +
+  labs(title = "P-verdier fordeling til samplesize 40",
+       x = "P-verdier",
+       y = "frekvens") +
+  theme_classic()
 
 
-significant_8 <- sum(results_8$pval < 0.05, na.rm = TRUE)
 
-significant_40 <- sum(results_40$pval < 0.05, na.rm = TRUE) 
+
 ```
 
-I utvalget n =8 så er det 227 p-verdier som er under p<0.05 og n =40 er det 865. Vi ser at det ved et større utvalg er flere studier som viser en statistisk signifikans
+For et histogram med utvalgstørrelsen på 40 ses det at flere av obervasjoene er sentrert mot lavere p-verdier. Dette fordi vi det er en større utvalgstørrelse som gir en større statistik power
 
-## Oppgave 7
+### Antall studier med statistisk signifikans
 
 
 ```{r}
-#| message: false
-#| warning: false
 #| code-fold: true
+#| label: "Calculate number of studies with stat signif"
 
-library(pwr)
-effect_size <- 1.5 / 3 
 alpha <- 0.05
-n_8 <- 8 
-power_8 <- pwr.t.test(d = effect_size, n = n_8, sig.level = 0.05, type = "one.sample", alternative = "two.sided")$power
 
-n_40 <- 40
-power_40 <- pwr.t.test(d = effect_size, n = n_40, sig.level = 0.05, type = "one.sample", alternative = "two.sided")$power
+significant_8 <- sum(results$pval[results$n == 8] < alpha)
+significant_40 <- sum(results$pval[results$n == 40] < alpha)
+
+
+
+
 ```
 
-Det vi ser er at større utvalg n = 40 gir en større statistik styrke, enne et mindre utvalg n =8. 
+ Med utvalgsstørrelse på 8 ser vi at det er `r significant_8` studier som viser statistisk signifikans, mens det ved  utvalgsstørrelse på 40 er  `r significant_40` studier som viser statistisk signifikans. Basert på dette som vi ser, ser vi at det ved et støøre utvalg vil være flere signifikante resultat. I denne situasjonen har jeg valgt å sette terskelen for signifikans til <0.05
 
 
 
-## Oppgave 8
+### Power of a one-sample t-test
 
 ```{r}
-
-#| message: false
-#| warning: false
 #| code-fold: true
+#| label: "Utregning av stat power"
 
-library(tidyverse)
+effect_size <- 1.5 / 3
 
+power_8 <- pwr.t.test(n = 8,
+                      d = effect_size,
+                      sig.level = alpha,
+                      type = "one.sample")$power
+rounded_power_8 <- round(power_8, 3)
+
+
+power_40 <- pwr.t.test(n = 40,
+                       d = effect_size,
+                       sig.level = alpha,
+                       type = "one.sample")$power
+
+rounded_power_40 <- round(power_40, 3)
+
+rounded_power_40_perc <- rounded_power_40 * 100
+
+
+
+
+```
+
+
+Når vi gjør beregninger av utlvalgstørrelsene ser vi at utvlagstørrelsen på 8 får en lavere statisitisk styrke (`r rounded_power_8`) enn det vi får på en utvalgstørrelse hvor vi har 40 (`r rounded_power_40`). Et større utvalg gjør vil det være høyere sannsynlighet for å kunne se den reelle effekten og at det ikke bare er en tilfeldighet. 
+
+
+### Med signifikansnivå på 0.05 hvor mange studier gir "falsk positiv" ved gjennomføring av mange repeterte studier?
+
+```{r}
+#| code-fold: true
+#| label: "Siste oppgave"
+
+
+set.seed(1)
 population <- rnorm(1000000, mean = 0, sd = 3)
 
-results_8 <- data.frame(estimate = rep(NA, 1000), 
-                         se = rep(NA, 1000), 
-                         pval = rep(NA, 1000), 
-                         n = 8)
-results_40 <- data.frame(estimate = rep(NA, 1000), 
-                          se = rep(NA, 1000), 
-                          pval = rep(NA, 1000), 
-                          n = 40)
 
+# Create data frames to store the model estimates
+results_8 <- data.frame(estimate = rep(NA, 1000), 
+                      se = rep(NA, 1000), 
+                      pval = rep(NA, 1000), 
+                      n = 8)  
+
+results_40 <- data.frame(estimate = rep(NA, 1000), 
+                      se = rep(NA, 1000), 
+                      pval = rep(NA, 1000), 
+                      n = 40)
+
+# A for loop used to sample 1000 studies, each iteration (i) will draw a new sample
+# from the population. 
 
 for(i in 1:1000) {
   
+  # Draw a sample 
   samp1 <- data.frame(y = sample(population, 8, replace = FALSE))
   samp2 <- data.frame(y = sample(population, 40, replace = FALSE))
 
-  # Modeller dataene
+  # Model the data
   m1 <- lm(y ~ 1, data = samp1)
   m2 <- lm(y ~ 1, data = samp2)
   
-  # Ekstraher verdier fra modellene
+  # Extract values from the models
   results_8[i, 1] <- coef(summary(m1))[1, 1]
   results_8[i, 2] <- coef(summary(m1))[1, 2]
   results_8[i, 3] <- coef(summary(m1))[1, 4]
@@ -246,33 +290,31 @@ for(i in 1:1000) {
   results_40[i, 1] <- coef(summary(m2))[1, 1]
   results_40[i, 2] <- coef(summary(m2))[1, 2]
   results_40[i, 3] <- coef(summary(m2))[1, 4]
+  
+  
 }
 
+
+# Save the results in a combined data frame
 
 results_null <- bind_rows(results_8, results_40)
 
 
-results_null %>%
-  ggplot(aes(pval)) + 
-  geom_histogram() +
-  facet_wrap(~ n)
+```
 
 
-results_null %>%
-  filter(pval < 0.05) %>%
-  group_by(n) %>%
-  summarise(sig_results = n()/1000)
+```{r}
+#| code-fold: true
+#| label: "Falske positive"
 
 
-false_positive_rate <- results_null %>%
-  filter(pval < 0.05) %>%
-  summarise(false_positives = n()) %>%
-  pull(false_positives) / 2000  
+false_positive_8 <- sum(results_8$pval < 0.05)
+false_positive_40 <- sum(results_40$pval < 0.05)
 
-false_positive_rate
 
+false_positive_8_alpha0.025 <- sum(results_8$pval < 0.025)
+false_positive_40_alpha0.025 <- sum(results_40$pval < 0.025)
 
 ```
 
-Det er 0,053 av studiene som ville gitt falske positive svar. 
-
+Når det gjøres 1000 repeterte studier, vil det være 50 falske positive om signifikansnivået er satt til 0.05. For utvalgstørrelsen på 8 fikk jeg da 49 og for utvalgstørrelsen på 40 fikk en 59 falske positive Hvis man velger å endre signifikansnivået til 0.025 vil en utlvalgstørrelse på 8 gi endel færre falske positive med 30 mens for utvlagstørrelsen på 40 vil det være 22.
