@@ -1,15 +1,6 @@
 # Introduksjon  {.unnumbered}
 
 
-Mappeeksamen består av følgende deler: 
+Mappeeksamen i IDR 4000 består både av oppgaver gjort i gruppe men også selvstendig arbeid. 
 
-- Rapport: "Deskriptiv statistikk, reliabilitet og validitet og verktøy for reproduserbar vitenskap".
-- Laborasjonsrapport fra molekylærlabb
-- Arbeidskrav i vitenskapsteori
-- Rapport: "Statistisk inferens, statistiske modeller og statistisk styrke"
-- Rapport: "Studiedesign"
-- Rapport: "Analyse av eksperimenter med repeterte målinger"
-
-I templatet organiseres hver del som et kapittel. 
-
-Referanser finner du sist i dokumenetet (eks. [@RN2902])
+Link til git: 
