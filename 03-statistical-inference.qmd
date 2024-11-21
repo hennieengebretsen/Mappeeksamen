@@ -37,7 +37,7 @@ sd(samp1$y) /sqrt(8)
 ```
 
 
-Ved bruk av regresjonsmodellene lm1 og lm2 skal begrepene estimat, SE (standard error) t-verdi og p-verdi forklares.
+
 
 Et estimat representererer gjennomsnittet av det vi har målt i utvalget. Det vil i lm1 og lm2 estimat gjennomsnitt på den ene variablen (y) i de to ulike utvalgene. 
 

@@ -1,9 +1,38 @@
 # Assignment 4: Study designs
 
+## Introduksjon 
 
-## Overview
-Choose an area of interest (e.g. protein supplementation for muscle hypertrophy or the effect of block
-periodization on VO<sub>2max</sub>). Find at least five *original research studies*^[Avoid using review articles or meta-analyses] in your selected area and describe strength and weakness of these studies. The report should focus on the design of the studies and selection of statistical tests to answer study aims.
-Conclude your report with a recommendation, how should future studies in your area be designed to best
-answer similar questions?
+Det vil i denne oppgave sammenlignes ulike studiedesign som tar for seg den samme tematikken for å kunne se på hvorvidt ulike studier presenterer og fremstiller sin forskning. Gode studiedesign sikrer god og mer pålitelig forskning.
 
+I denne oppgaven vil det ta for seg fem ulike studier som ser på effekten av blokkperiodisering på det maksimale oksygenopptaket (VO2maks) det har i studiene også blitt presentert andre funn, men disse vil ikke bli diskutert inngående i denne oppgaven. Artiklene som er lagt til grunn er [@breil2010a; @rønnestad2014b; @rønnestad2016; @rønnestad2019a]
+
+
+I de fem ulike artiklene er hensikten å finne ut hvilken effekt blokkperiodisering (BP) verus tradisjonell periodisering (TP) har på VO<sub>2max</sub>.  Studiene er randomiserte kontrollerte forsøk. I de ulike studiene har forskningsdeltagerne blitt inndelt i to ulike grupper enten BP eller TP gruppen. Treningsvolumet innad i de to gruppene var likt men periodiseringen i BP gruppen var annerledes da de hadde mesosykluser med høy intensiv trening.
+
+Studiene hadde mellom 16 til 22 deltagere noen av studiene besto kun av menn mens i andre studier var det både kvinner og menn. Et fellestrekk for studiene var at det var godt trente individer, hvor i noen av studiene var det utøvere på nasjonalt eller internasjonalt nivå i konkurransesammenheng. Tre av studiene ser på syklister, mens for de to andre ser den ene studien på langrennsløpere og skiskyttere mens den andre ser på hockeyspillere.
+
+Intervensjonsvarigheten varierte imellom de ulike studiene intervensjonen varierte fra 4-12 uker. Det ble i alle studiene gjennomført testing pre og post intervensjonstart.
+
+I de ulike studiene ble flere statistiske metoder benyttet for å analysere dataene. Generelt ble gjennomsnitt ± standardavvik (SD) rapportert for alle variabler, noe som gir en beskrivelse av både sentralt mål og variasjon i dataene.
+
+For å sammenligne baseline-målingene mellom gruppene, ble det i flere av studiene benyttet en to-sidet unpaired t-test for uavhengige prøver. Denne testen ble brukt for å vurdere om det var signifikante forskjeller i variabler som VO<sub>2max</sub>, vekt og høyde ved starten av studiene. Videre ble endringer mellom pre- og post-intervensjon i de samme gruppene vurdert ved hjelp av to-sidet paired t-test som tester om det er statistisk signifikante forskjeller i målingene innenfor hver gruppe.
+
+For å vurdere effektene av intervensjonen på tvers av tid og gruppe, benyttet flere av studiene to-veis ANOVA med repeterte målinger. Denne metoden gjør det mulig å undersøke interaksjonseffekter mellom tid (pre- vs. post-intervensjon) og gruppe (f.eks., BP vs. TP). Når ANOVA resulterte i signifikante hoved- eller interaksjonseffekter, ble det utført Tukey’s HSD (Honestly Significant Difference) post-hoc tester or å identifisere hvilke spesifikke grupper som skilte seg ut.
+
+Effektstørrelse (ES) ble beregnet for å vurdere praktisk betydning av forbedringer mellom gruppene. Cohen’s d ble brukt til å beregne ES, og kategoriseringen av ES fulgte standarden: 0.0–0.2 ble betraktet som trivielt, 0.2–0.6 som lite, 0.6–1.2 som moderat, og verdier over 1.2 som store effekter.
+
+For å sammenligne relative endringer mellom gruppene i spesifikke parametere som VO<sub>2max</sub>og maksimalt effektutbytte, ble det i flere studier brukt unpaired t-test for uavhengige prøver. Denne testen ble brukt for å vurdere om endringene i de ulike gruppene (BP vs. TP) var signifikante.
+
+Statistisk signifikans ble generelt vurdert ved en p-verdi ≤ 0,05, for at funnene kan anses som statistisk signifikante.
+
+Resultater og diskusjon
+
+Det kommer frem i alle studiene når BP gruppen og TP gruppen er sammenlignet at BP gruppen post intervensjonen har hatt en signifikant økning i VO<sub>2max</sub>. 
+
+En utfordring med de overnevnte studiene er at størrelsesutvalget i studiene er at det er få deltagere. Ved et mindre utvalg vil det kunne være større sannsynlighet for type II feil at en vil bekrefte nullhypotesen selv om den er falsk. Ved et lite utvalg vil det også være  større variasjon mellom forsøkspersonene sine resultater, at man vil ha såkalte «uteliggere» som da vil ha større innvirkning på resultatene.
+
+En annen problemstilling en kan stille spørsmålstegn ved er at utvalget som er representert i denne forskningen er godt trente utøvere. Dette kan gjøre det vanskeligere å generalisere resultatene da det kan være vanskelig å lage en allmenn konklusjon basert på utvalget.
+
+# Konklusjon
+
+Blokkperiodisering viser seg og ha en større effekt på økning i VO<sub>2max</sub> enn tradisjonell periodisering.

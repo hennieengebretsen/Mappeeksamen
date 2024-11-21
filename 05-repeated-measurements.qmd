@@ -5,13 +5,13 @@ editor_options:
   echo: false 
 ---
 
-# 5.1 Introduksjon
+### Introduksjon
 
 Styrketrening har som hovedmål å oppnå eller opprettholde muskelstyrke og muskelmasse, og dette kan variere avhengig av individuelle behov, treningsbakgrunn og mål. For de fleste er imidlertid det overordnede målet å forbedre fysisk helse ved å styrke musklene og øke muskelmassen. Hos personer som er utrente, viser forskning at styrketrening kan føre til en økning på mellom 0,1-0,5 % i muskelfibertverrsnitt og en økning på omtrent 1 % i muskelstyrke per treningsøkt de første 8-12 ukene med trening [@wernbom2007]. Disse tidlige gevinstene skyldes primært neuromuskulær tilpasning, der kroppen lærer å rekruttere flere muskelfibre og forbedre koordinasjonen mellom nervesystemet og musklene.
 
 Selv om styrketrening har betydelige helsefremmende fordeler, er det mange som nedprioriterer denne treningsformen på grunn av tidsmangel i en hektisk hverdag. Dette er et økende problem, spesielt når en stor del av befolkningen har stillesittende jobber og en inaktiv livsstil. Den manglende fysiske aktiviteten er en alvorlig trussel mot folkehelsen og øker risikoen for flere kroniske sykdommer som hjerte- og karsykdommer, diabetes og fedme. Videre kan lav fysisk aktivitet føre til redusert muskelmasse og styrke, noe som har negative konsekvenser for funksjonell helse, spesielt blant eldre voksne.
 
-Forskning viser at muskelmasse og muskelstyrke reduseres betydelig etter fylte 50 år, en prosess kjent som sarkopeni, som kan føre til redusert mobilitet, dårligere balanse og økt risiko for skader [@deschenes2004 ;@janssen2000]. Tap av muskelmasse med økende alder er en naturlig prosess, men styrketrening kan motvirke denne utviklingen og bidra til at eldre voksne opprettholder eller til og med øker muskelmassen. Studier som Roth et al. (2001)[@roth2001] har vist at styrketrening har en positiv innvirkning på både muskelmasse og styrke, selv blant eldre voksne. Dette understreker viktigheten av å prioritere styrketrening som en del av helsefremmende tiltak, spesielt i lys av den aldrende befolkningen.
+Forskning viser at muskelmasse og muskelstyrke reduseres betydelig etter fylte 50 år, en prosess kjent som sarkopeni, som kan føre til redusert mobilitet, dårligere balanse og økt risiko for skader [@deschenes2004 ; @janssen2000]. Tap av muskelmasse med økende alder er en naturlig prosess, men styrketrening kan motvirke denne utviklingen og bidra til at eldre voksne opprettholder eller til og med øker muskelmassen. Studier som Roth et al. (2001)[@roth2001] har vist at styrketrening har en positiv innvirkning på både muskelmasse og styrke, selv blant eldre voksne. Dette understreker viktigheten av å prioritere styrketrening som en del av helsefremmende tiltak, spesielt i lys av den aldrende befolkningen.
 
 Med økende levealder i befolkningen blir det stadig viktigere å legge til rette for at enkeltindivider har de beste forutsetningene for god helse gjennom hele livet. Styrketrening kan spille en avgjørende rolle i dette, ved å forbedre muskelstyrken, redusere risikoen for fall og beinbrudd, og bidra til økt funksjonell kapasitet i dagliglivet. Det er derfor essensielt å finne treningsformer som er effektive og realistiske for folk i ulike aldre og livssituasjoner.
 
@@ -79,19 +79,19 @@ dxadata %>%
 
 ```
 
-# 5.2.1 Styrketrening
+### Styrketrening
 
-Intervensjonen var et 12-ukers  styrketrening intervensjonv av hele kroppen. Underekstremitetene ble trent unilateralt for å kunne tillate differensiering av treningsvolum innad for deltageren. Beina ble tilfeldig og randomisert om det skulle utføres ett vs. tre sett motstandstrening. Hver forsøksperson utførte begge protokollene altså ett vs. tre sett. Muskelstyrke ble videre testet ved intervensjonsstart (baseline), etter uke 3, 5, 9 og ved intervensjonsslutt. Kroppssammensetningen til forsøkspersonene ble målt ved baseline (pre) og ved intervensjonslutt (post).  
+Intervensjonen var et 12-ukers  styrketrening intervensjonv av hele kroppen. Underekstremitetene ble trent unilateralt for å kunne tillate differensiering av treningsvolum innad for deltageren. Beina ble tilfeldig og randomisert om det skulle utføres ett vs. tre sett motstandstrening. Hver forsøksperson utførte begge protokollene altså ett vs. tre sett. Muskelstyrke ble videre testet ved intervensjonsstart (baseline), etter uke 3, 5, 9 og ved intervensjonsslutt. Kroppssammensetningen til forsøkspersonene ble målt ved baseline (pre) og ved intervensjonslutt (post).
 
-# 5.2.3 Testprotokoll
+### Testprotokoll
 
 Maksimalstyrke ble testet som en én reptisjon-maksimaltest (1RM) i unilateralbenpress. Det ble gjennomført en standardisert- og øvelse spesifikk oppvarming der det ble kjørt 10 repetisjoner på 50%, 6 repetisjoner på 75% og 2 repetisjoner på forventet 1RM. Videre ble 1 RM testet ved at vekten økte gradvis til det ikke kunne utføres en benpress etter protokollført standard 4-6 forsøk per forsøksperson. Høyeste vekt som forsøkspersonen klarte ble notert og satt som 1RM
 
 Kroppssammensetningen ble målt ved bruk av Dual-Energy røntgenabsorptimetri (DXA) (Lunar Prodgigy, GE healthcare) etter standardprotokoll. På forhånd før DXA ble forsøkspersonen informert om å faste i 2timer før test, samt å ikke gjennomføre hard fysisk aktivitet 48 timer før test.
 
-# 5.3 Resultater
+### Resultater
 
-Det er blitt kjørt en parret t-test for å kunne se på differansen mellom det å gjøre et versus tre sett på beina på maksimal styrke ved unlatiral beinpress. Det gjøres også en grafisk fremstilling som skal illustrere forskjellen mellom ett og tre sett. Analyse programmet som er brukt er R studio for å analysere all data.  
+Det er blitt kjørt en parret t-test for å kunne se på differansen mellom det å gjøre et versus tre sett på beina på maksimal styrke ved unlatiral beinpress. Det gjøres også en grafisk fremstilling som skal illustrere forskjellen mellom ett og tre sett. Analyse programmet som er brukt er R studio for å analysere all data.
 
 ```{r}
 #| label: "Endring i leanmass"
@@ -181,7 +181,6 @@ lean.fig
 
 ```
 
-
 ```{r}
 library(tidyverse)
 library(exscidata)
@@ -250,5 +249,8 @@ legpress.fig
 
 ```
 
+# Diskusjon
 
-Diskusjon 
+Problemstillingen i denne studien var om et versus tre sett hadde størst økning i muuskelstyrke og muskelmasse.
+
+Resultatene som fremkommer i studien viser at tre sett kontra ett sett har en signifikant større endring på muskelstyrke og muskelmasse. Basert på tidligere studier gjort av Kriger i 2009 0g 2010 [@krieger2009; @krieger2010]hvor en så at styrketrening med moderat volum hadde større effekt på muskelstyrke og muskelmasse enn med lavt volum. Selvom det vises at å trene et sett også hadde en stor endring i masse og muskelstyrke.
