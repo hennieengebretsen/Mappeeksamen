@@ -3,4 +3,4 @@
 
 Mappeeksamen i IDR 4000 består både av oppgaver gjort i gruppe men også selvstendig arbeid. 
 
-Link til git: 
+Link til git: https://github.com/hennieengebretsen/Mappeeksamen
