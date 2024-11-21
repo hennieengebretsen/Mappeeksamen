@@ -9,15 +9,16 @@ editor:
 
 # Philosophy of science
 
-Vitenskapsfilosofi oppgave Ifølge Hume er det umulig å rasjonelt begrunne bruken av induksjon.
-Hva er argumentet for denne konklusjonen?
-Gi en innvending mot ett av premissene i Humes argument og prøv å svare på denne innvendingen på Humes vegne.
+**Vitenskapsfilosofi oppgave Ifølge Hume er det umulig å rasjonelt begrunne bruken av induksjon. Hva er argumentet for denne konklusjonen? Gi en innvending mot ett av premissene i Humes argument og prøv å svare på denne innvendingen på Humes vegne.**
+
 Hume var en kjent filosof og stilte seg kritisk til bruken av induksjon.
 Hume mente at det umulig var rasjonelt å kunne begrunne bruken av induksjon (Alnes, 2024).
 Hume sine argumenter for dette var at hvert induktive argument forutsetter uniformitetsprinsippet.
 Uniformitetsprinsippet er antagelsen om at naturen oppfører seg konsekvent, slik at hendelser som har skjedd tidligere, også vil skje i fremtiden.
-Det andre argumentet er at uniformitetsprinsippet ikke har en rasjonell begrunnelse (Vassend, 2024, Dag1, PPT).\
-Hume hadde mange argumenter imot bruken av induksjon.
+Det andre argumentet er at uniformitetsprinsippet ikke har en rasjonell begrunnelse (Vassend, 2024, Dag1, PPT).
+
+\
+Hume mente at ikke induksjon kunne brukes rasjonelt.
 Hume mente at induksjon blant annet baserte seg på empirisme, at det en erfarte i går vil kunne predikere at det samme skal skje i morgen.
 Et eksempel på dette er at siden sola sto opp i går, vil den også stå opp i morgen.
 Det Hume sitt syn stiller seg mest kritisk til er hvordan mangelen på en rasjonell begrunnelse er med på å anta fremtiden i eksemplet som er gitt over.
@@ -29,11 +30,13 @@ En innvendig mot Humes sine premiss er det å kunne predikere fremtiden basert p
 Mennesker har i tusener av år observert at solen står opp hver dag.
 Dette danner en empirisme for at det vil skje i morgen.
 Som menneske vil det være vanskelig å skulle drive forskning og leve et hverdagsliv om man ikke vil predikere fremtiden basert på empiristiske erfaringer.
+
 Humes svar på innvendingen om solens oppgang vil ta for seg ulike argumenter som belyser begrensningene ved induksjon.
 For det første vil han understreke at selv om vi har erfaring med at solen har steget opp hver dag, gir ikke dette en rasjonell garanti for at den vil fortsette å gjøre det. Våres erfaringer kan være intuitive, men Hume vil kunne argumentere for at det er ikke nødvendigvis er en logisk nødvendighet som binder fremtidens hendelser til hva fortiden viste, og det kan være en dag solen faktisk ikke står opp.
 Hume vil videre kunne påpeke muligheten for feilaktige observasjoner.
 Historisk har mennesket gjort mange feil og feil antakelser om naturen, for eksempel trodde en at jorden var flat og at den ble regnet som sentrum i solsystemet.
 Dette er eksempler på at menneskets observasjoner kan være begrensede eller feiltolkede, noe som gjør det risikabelt å basere forventninger om fremtiden utelukkende på tidligere erfaringer.
+
 Hume ville også peke på sirkulariteten i argumentasjonen.
 Når vi bruker tidligere observasjoner av solen for å rettferdiggjøre fremtidige forventninger, befinner vi oss i et sirkulært resonnement.
 Vi vil da anta at fortiden er relevant for fremtiden, men dette er en induktiv antagelse som selv krever gyldighet.
@@ -59,16 +62,28 @@ Da får man en gradvis utvikling der teorier som motsetter seg falsifisering bli
 Herding av en hypotese eller teori betyr at den har blitt utsatt for mange tester og forsøk på falsifisering, men har overlevd disse uten å bli falsifisert.
 Dette styrker teoriens troverdighet og gir den en høy grad av vitenskapelig autoritet.
 Popper mente at ingen teori kan sies å være endelig bevist, men en "herdet" teori er den beste tilgjengelige vitenskapelige forklaringen på et fenomen.
+Et sentralt problem med Karl Poppers syn på vitenskapelig metode er at hans teori om falsifikasjon ikke fullt ut tar høyde for kompleksiteten i hvordan hypoteser testes i praksis.
+Ifølge Quine-Duhem-teoremet er det umulig å teste en enkelt hypotese isolert, fordi enhver vitenskapelig test alltid involverer flere hypoteser og underliggende antakelser (Antonsen et al., 2023).
+Dette skaper betydelige utfordringer når det gjelder å avgjøre hvilken hypotese som faktisk bør forkastes dersom testresultatene ikke stemmer overens med forventningene.
 
-Et sentralt problem med Karl Poppers syn på vitenskapelig metode er at hans teori om falsifikasjon ikke tar høyde for kompleksiteten i hvordan hypoteser testes i praksis.
-Ifølge Quine-Duhem-teoremet er det umulig å teste en enkelt hypotese isolert; enhver vitenskapelig test involverer alltid flere hypoteser og antakelser (Antonsen et al., 2023).
-Dette skaper betydelige utfordringer når det kommer til å avgjøre hvilken hypotese som skal forkastes dersom testresultatene ikke stemmer overens med forventningene.
-Når et eksperiment ikke gir de forventede resultatene, kan forskere stå overfor en vanskelig beslutning.
-Siden flere hypoteser er involvert, kan de velge å forkaste observasjonene i stedet for den opprinnelige hypotesen (Popper, 1959).
-Dette kan føre til en situasjon der teorier holdes ved like, til tross for motstridende data, og dermed kan vitenskapen stagnere.
-I slike tilfeller blir reell kunnskap ikke fremmet, fordi det ikke tas de nødvendige skrittene for å kritisk vurdere eller forkaste hypoteser.
-For å håndtere problemene knyttet til Quine-Duhem-teoremet og Poppers falsifikasjonisme, kan en iverksette flere strategier.
-Hypotetisk-deduktiv metode, forskerne bør formulere hypoteser med klare og testbare prediksjoner.
-Ved å lage spesifikke, testbare forutsigelser kan det bli lettere å isolere hvilke hypoteser som er ansvarlige for et gitt resultat.
-Systematisk testing av tilleggs hypoteser såkalte adhoc hypoteser (Antonsen et.al, s.110-112, 2023) Forskerne kan utføre eksperimenter som eksplisitt tester tilleggs hypotesene.
-Ved å evaluere hvordan disse hypotesene påvirker resultatene, kan det bli lettere å identifisere hva som må forkastes dersom det oppstår avvik.
+Når et eksperiment gir avvikende resultater, står forskerne overfor en krevende beslutning.
+Siden flere hypoteser er involvert i en gitt test, kan de i noen tilfeller velge å forkaste observasjonene eller støttehypotesene i stedet for å utfordre hovedteorien.
+Dette kan føre til at teorier opprettholdes til tross for motstridende data, noe som kan bremse vitenskapelig utvikling.
+Når slike strategier blir utbredt, risikerer vitenskapen å stagnere, fordi de nødvendige kritiske vurderingene og revisjonene av teorier ikke finner sted.
+
+For å håndtere utfordringene knyttet til Quine-Duhem-teoremet og Poppers falsifikasjonisme, kan flere strategier tas i bruk.
+For det første bør forskere anvende den hypotetisk-deduktive metoden, der hypoteser formuleres med klare og testbare prediksjoner.
+Dette gjør det mulig å lage spesifikke forutsigelser som kan måles, noe som igjen gjør det enklere å identifisere hvilke hypoteser som er ansvarlige for et gitt resultat.
+For eksempel kan man i medisinsk forskning formulere en prediksjon om at en spesifikk behandling vil føre til en målbar reduksjon i symptomer innen en definert tidsperiode.
+
+Videre bør forskere systematisk teste ad hoc-hypoteser, som ofte introduseres for å forklare avvik mellom teori og observasjon.
+Slike tilleggsforklaringer må undersøkes gjennom målrettede eksperimenter som eksplisitt tester hvordan de påvirker resultatene.
+Dette bidrar til å avdekke om ad hoc-hypotesene faktisk styrker teorien, eller om de snarere skjuler svakheter som bør revurderes (Antonsen et al., 2023, s. 110–112).
+
+Til slutt bør hypoteser isoleres så langt det lar seg gjøre.
+Ved å bryte ned komplekse teorier i mindre komponenter og teste hver del separat kan forskerne bedre forstå hvilke deler som fungerer, og hvilke som skaper problemer.
+Dette hindrer at hele teorien forkastes unødvendig, samtidig som det sikrer at svakheter i teorien ikke blir ignorert.
+
+Disse strategiene gjør det mulig å håndtere kompleksiteten i vitenskapelig testing, samtidig som de adresserer svakhetene ved både Quine-Duhem-teoremet og Poppers falsifikasjonisme.
+Ved å kombinere klarere prediksjoner, systematisk testing av tilleggsforklaringer og en mer isolert tilnærming til hypoteser kan forskerne skape en mer robust vitenskapelig praksis.
+Dette bidrar til å sikre fremgang i vitenskapen, selv når teorier møter motstridende data.

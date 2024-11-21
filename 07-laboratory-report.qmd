@@ -12,7 +12,7 @@ editor_options:
 
 ## Introduksjon
 
-I forskning finnes flere metoder for å studere genuttrykk, og en av de mest brukte teknikkene er kvantitativ fluoresens-basert sanntids polymerase kjedereaksjon (qPCR) [@Derv2010]. Ifølge Kuang et al. (2018) gir denne metoden en presis sanntidsmåling av genuttrykk og er særlig verdifull innen treningsfysiologi for å undersøke hvordan trening påvirker uttrykket av spesifikke gener. qPCR gjør det mulig å kvantifisere nivåene av et målgen, for eksempel i muskelvev, og studere hvordan disse nivåene kan endres som respons på fysiologiske stimuli [@kuang2018].
+I forskning finnes flere metoder for å studere genuttrykk, og en av de mest brukte teknikkene er kvantitativ fluoresens-basert sanntids polymerase kjedereaksjon (qPCR) [@derveaux2010]. Ifølge Kuang et al. (2018) gir denne metoden en presis sanntidsmåling av genuttrykk og er særlig verdifull innen treningsfysiologi for å undersøke hvordan trening påvirker uttrykket av spesifikke gener. qPCR gjør det mulig å kvantifisere nivåene av et målgen, for eksempel i muskelvev, og studere hvordan disse nivåene kan endres som respons på fysiologiske stimuli [@kuang2018].
 
 Videre beskriver Kuang et al. (2018) hvordan qPCR kan brukes til å undersøke treningsinduserte endringer i genuttrykk, inkludert gener relatert til muskelfibertyper. Dette gir verdifull innsikt i de molekylære mekanismene bak muskeltilpasning og hvordan gener responderer på forskjellige faktorer ved trening, noe som bidrar til en dypere forståelse av treningsinduserte tilpasninger i kroppen [@kuang2018].
 

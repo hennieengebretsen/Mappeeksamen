@@ -1,15 +1,12 @@
 # Assignment 4: Study designs
 
-## Introduksjon 
+## Introduksjon
 
 Det vil i denne oppgave sammenlignes ulike studiedesign som tar for seg den samme tematikken for å kunne se på hvorvidt ulike studier presenterer og fremstiller sin forskning. Gode studiedesign sikrer god og mer pålitelig forskning.
 
-I denne oppgaven vil det ta for seg fem ulike studier som ser på effekten av blokkperiodisering på det maksimale oksygenopptaket (VO2maks) det har i studiene også blitt presentert andre funn, men disse vil ikke bli diskutert inngående i denne oppgaven. Artiklene som er lagt til grunn er [@breil2010a; @rønnestad2014b; @rønnestad2016; @rønnestad2019a]
+I denne oppgaven vil det ta for seg fem ulike studier som ser på effekten av blokkperiodisering på det maksimale oksygenopptaket (VO2maks) det har i studiene også blitt presentert andre funn, men disse vil ikke bli diskutert inngående i denne oppgaven. Artiklene som er lagt til grunn er [@rønnestad2019e; @rønnestad2016d; @rønnestad2014f; @breil2010f ; @rønnestad2014] I de fem ulike artiklene er hensikten å finne ut hvilken effekt blokkperiodisering (BP) verus tradisjonell periodisering (TP) har på VO<sub>2max</sub>.  Studiene er randomiserte kontrollerte forsøk (RCT). I de ulike studiene har forskningsdeltagerne blitt inndelt i to ulike grupper enten BP eller TP gruppen. Treningsvolumet innad i de to gruppene var likt men periodiseringen i BP gruppen var annerledes da de hadde mesosykluser med høy intensiv trening.
 
-
-I de fem ulike artiklene er hensikten å finne ut hvilken effekt blokkperiodisering (BP) verus tradisjonell periodisering (TP) har på VO<sub>2max</sub>.  Studiene er randomiserte kontrollerte forsøk. I de ulike studiene har forskningsdeltagerne blitt inndelt i to ulike grupper enten BP eller TP gruppen. Treningsvolumet innad i de to gruppene var likt men periodiseringen i BP gruppen var annerledes da de hadde mesosykluser med høy intensiv trening.
-
-Studiene hadde mellom 16 til 22 deltagere noen av studiene besto kun av menn mens i andre studier var det både kvinner og menn. Et fellestrekk for studiene var at det var godt trente individer, hvor i noen av studiene var det utøvere på nasjonalt eller internasjonalt nivå i konkurransesammenheng. Tre av studiene ser på syklister, mens for de to andre ser den ene studien på langrennsløpere og skiskyttere mens den andre ser på hockeyspillere.
+Studiene hadde mellom 16 til 22 deltagere de fleste studiene besto kun av menn mens i andre studier var det både kvinner og menn [@breil2010f] . Et fellestrekk for studiene var at det var godt trente individer, hvor i noen av studiene var det utøvere på nasjonalt eller internasjonalt nivå i konkurransesammenheng. To av studiene ser på syklister mens for de tre andre ser den ene på hockeyspillere [@rønnestad2019e] , en alpinister @breil2010f og den sitse på langrennsløpere og skiskyttere @rønnestad2016d
 
 Intervensjonsvarigheten varierte imellom de ulike studiene intervensjonen varierte fra 4-12 uker. Det ble i alle studiene gjennomført testing pre og post intervensjonstart.
 
@@ -19,7 +16,7 @@ For å sammenligne baseline-målingene mellom gruppene, ble det i flere av studi
 
 For å vurdere effektene av intervensjonen på tvers av tid og gruppe, benyttet flere av studiene to-veis ANOVA med repeterte målinger. Denne metoden gjør det mulig å undersøke interaksjonseffekter mellom tid (pre- vs. post-intervensjon) og gruppe (f.eks., BP vs. TP). Når ANOVA resulterte i signifikante hoved- eller interaksjonseffekter, ble det utført Tukey’s HSD (Honestly Significant Difference) post-hoc tester or å identifisere hvilke spesifikke grupper som skilte seg ut.
 
-Effektstørrelse (ES) ble beregnet for å vurdere praktisk betydning av forbedringer mellom gruppene. Cohen’s d ble brukt til å beregne ES, og kategoriseringen av ES fulgte standarden: 0.0–0.2 ble betraktet som trivielt, 0.2–0.6 som lite, 0.6–1.2 som moderat, og verdier over 1.2 som store effekter.
+Effektstørrelse (ES) ble beregnet for å vurdere praktisk betydning av forbedringer mellom gruppene. Cohen’s d ble brukt til å beregne ES, og kategoriseringen av ES fulgte standarden: 0.0–0.2 ble betraktet som trivielt, 0.2–0.6 som lite, 0.6–1.2 som moderat, og verdier over 1.2 som store effekter @hopkins2009.
 
 For å sammenligne relative endringer mellom gruppene i spesifikke parametere som VO<sub>2max</sub>og maksimalt effektutbytte, ble det i flere studier brukt unpaired t-test for uavhengige prøver. Denne testen ble brukt for å vurdere om endringene i de ulike gruppene (BP vs. TP) var signifikante.
 

@@ -8,24 +8,23 @@ editor_options:
 
 ## Introduksjon
 
-Reliabilitet er en utrolig viktig faktor innenfor fysiologisk testing. Hvis man ønsker å følge utviklingen til en utøver over en lenger periode er det viktig at testen vi benytter oss av, og utstyret som brukes i testen måler tilnærmet likt hver gang. Hvis testene som blir brukt har høy reliabilitet kan utøvere og trenere stole på at forskjellene i resultater mellom ulike tester skyldes endringer i fysiologiske faktorer og at det ikke er feilmålinger som gir utslag. 
+Reliabilitet er en utrolig viktig faktor innenfor fysiologisk testing. Hvis man ønsker å følge utviklingen til en utøver over en lenger periode er det viktig at testen vi benytter oss av, og utstyret som brukes i testen måler tilnærmet likt hver gang. Hvis testene som blir brukt har høy reliabilitet kan utøvere og trenere stole på at forskjellene i resultater mellom ulike tester skyldes endringer i fysiologiske faktorer og at det ikke er feilmålinger som gir utslag.
 
-For å i ettertid kunne evaluere effekten av en treningsplan, intervensjon eller periode må man kunne stole på testene som blir gjennomført. Dersom testene som blir benyttet har lav reliabilitet, kan det være vanskelig å skille mellom virkelige prestasjonsforbedringer og tilfeldige variasjoner som skyldes unøyaktighet i målingene. Dette kan resultere i at man endrer et godt fungerende treningsopplegg, eller at man fortsetter med et dårlig fungerende treningsopplegg. 
+For å i ettertid kunne evaluere effekten av en treningsplan, intervensjon eller periode må man kunne stole på testene som blir gjennomført. Dersom testene som blir benyttet har lav reliabilitet, kan det være vanskelig å skille mellom virkelige prestasjonsforbedringer og tilfeldige variasjoner som skyldes unøyaktighet i målingene. Dette kan resultere i at man endrer et godt fungerende treningsopplegg, eller at man fortsetter med et dårlig fungerende treningsopplegg.
 
-I idrettsvitenskapen forskes det gjerne på effekt av ulike intervensjoner. Uavhengig av om det gjøres forskning på utrente eller elite-utøvere er det viktig at målingene har høy reliabilitet. Dette med bakgrunn i at vi vil levere god kvalitet i forskningen og at det skal være litteratur man skal kunne stole på. 
+I idrettsvitenskapen forskes det gjerne på effekt av ulike intervensjoner. Uavhengig av om det gjøres forskning på utrente eller elite-utøvere er det viktig at målingene har høy reliabilitet. Dette med bakgrunn i at vi vil levere god kvalitet i forskningen og at det skal være litteratur man skal kunne stole på.
 
 Det ble gjennomført fire testdager 28.08.2024, 29.08.2024, 9.09.2024 og 11.09.2024 for å teste $\dot{V}O_{2maks}$. Formålet med disse testene var å øve på å kunne gjennomføre fysiologiske tester med høy reliabilitet. Reliabilitet refererer til graden av konsistens eller pålitelighet i målinger evnen til å kunne reprodusere [@RN130], et eksempel på dette er ved fysiologisk testing som repeteres i forskningsprosjekter, der bedre reliabilitet vil indikere hvor god presisjonen er og måling av endring over tid [@RN130]. Det er mange begreper som er relevante for å kunne si noe om reliabilitet, men standardavviket er et av disse. Standardavviket sier noe om hvor langt unna verdiens gjennomsnittlige avstand er fra gjennomsnittet [@Spiegelhalter].
 
-Kroppens maksimale oksygenopptak ($\dot{V}O_{2maks}$) sier noe om kroppens maksimale evne til å ta opp og omsette oksygen [@Bassett]. $\dot{V}O_{2maks}$ kan beskrives ved hjelp av Ficks likning: $\dot{V}O_{2maks}$=MVmaks x a-vO2differansemaks. $\dot{V}O_{2maks}$ måles ved at man måler hvor mye oksygen kroppen klarer å omsette pr minutt [@Bassett]. Det finnes ulike måter og fremstille $\dot{V}O_{2maks}$ på, de to av disse er absolutt $\dot{V}O_{2maks}$ beskrevet som (ml &times;min<sup>-1</sup>) eller relative tall relatert til kroppsvekt (ml/kg/min).
+Kroppens maksimale oksygenopptak ($\dot{V}O_{2maks}$) sier noe om kroppens maksimale evne til å ta opp og omsette oksygen [@Bassett]. $\dot{V}O_{2maks}$ kan beskrives ved hjelp av Ficks likning: $\dot{V}O_{2maks}$=MVmaks x a-vO2differansemaks. $\dot{V}O_{2maks}$ måles ved at man måler hvor mye oksygen kroppen klarer å omsette pr minutt . Det finnes ulike måter og fremstille $\dot{V}O_{2maks}$ på, de to av disse er absolutt $\dot{V}O_{2maks}$ beskrevet som (ml ×min<sup>-1</sup>) eller relative tall relatert til kroppsvekt (ml/kg/min).
 
 I resultatdelen har vi valgt å bruke relativ $\dot{V}O_{2maks}$ for å beregne reliabiliteten til testene vi har gjennomført. Vi har også valgt å se på sammenhengen mellom relativ $\dot{V}O_{2maks}$ og wattmaks under $\dot{V}O_{2maks}$-testen. Forskning viser at høy $\dot{V}O_{2maks}$, sammen med god mekanisk effektivitet og høy laktatterskel gir bedre utholdenhetsprestasjoner, noe som reflekteres i høyere Wmaks/kg [@Joyner].
 
 ## Metode
 
-$\dot{V}O_{2maks}$-testen ble gjennomført på en ergometersykkel med bukkestyre (Lode Excalibur Sport; Lode B.V., Groningen, Nederland). Kranken kalibreres på Lode-sykkelen før hver teststart. Dette gjøres for å få nøyaktige tråkkdata på hver forsøksperson. Sykkel stilles inn etter utøvers ønske for å sikre best mulig sittestilling ved første test. Sykkel stilles inn etter nøyaktig samme mål ved senere tester for å gjøre reliabiliteten høy. For å måle det maksimale oksygenopptaket ble det brukt Vyntus (Jaeger Vyntus CPX, Hoechberg, Tyskland). Gassanalysator kalibreres til \< 2,0% differanse og luftvolum kalibreres til \< 0,2% differanse. Syklistene veies med de klærne de skal sykle med, og 0,3kg trekkes fra (300g er et estimat på vekten av klærne forsøkspersonen har på). For å kunne sikre god relabilitet ble det tydeliggjort at man skulle replisere det siste måltidet før test, ha det samme koffeininntaket, avstå fra alkohol og tobakk de siste 72 timene før test og prøve å få tilnærmet lik søvn, samt trene det samme dagen før test. Da dette er faktorer som kan spille inn på prestasjon og metabolismen [@RN2511] og dermed påvirke relabiliteten. 
+$\dot{V}O_{2maks}$-testen ble gjennomført på en ergometersykkel med bukkestyre (Lode Excalibur Sport; Lode B.V., Groningen, Nederland). Kranken kalibreres på Lode-sykkelen før hver teststart. Dette gjøres for å få nøyaktige tråkkdata på hver forsøksperson. Sykkel stilles inn etter utøvers ønske for å sikre best mulig sittestilling ved første test. Sykkel stilles inn etter nøyaktig samme mål ved senere tester for å gjøre reliabiliteten høy. For å måle det maksimale oksygenopptaket ble det brukt Vyntus (Jaeger Vyntus CPX, Hoechberg, Tyskland). Gassanalysator kalibreres til \< 2,0% differanse og luftvolum kalibreres til \< 0,2% differanse. Syklistene veies med de klærne de skal sykle med, og 0,3kg trekkes fra (300g er et estimat på vekten av klærne forsøkspersonen har på). For å kunne sikre god relabilitet ble det tydeliggjort at man skulle replisere det siste måltidet før test, ha det samme koffeininntaket, avstå fra alkohol og tobakk de siste 72 timene før test og prøve å få tilnærmet lik søvn, samt trene det samme dagen før test. Da dette er faktorer som kan spille inn på prestasjon og metabolismen [@RN2511] og dermed påvirke relabiliteten.
 
-$\dot{V}O_{2maks}$-testen gjennomføres etter en fem minutters standardisert oppvarming på ergometersykkelen. Oppvarmingen starter to minutter på 11-12 i Borg, deretter to minutter på 15 i Borg før ett minutt på 11-12 Borg. Testen starter på en belastning (Watt) basert på deltagerens nivå i samråd med utøver og testleder. Det viktigste er at påfølgende $\dot{V}O_{2maks}$ tester starter på samme watt. Wattbelastningen økte med 20W eller 25W (20W for kvinne og 25W for mann) hvert minutt frem til utøveren når maksimal utmattelse. Maksimal utmattelse ble i denne sammenheng ikke evne til å kunne opprettholde RPM > 60. Under $\dot{V}O_{2maks}$ var RPM valgfritt. Testleder gjør verbal oppmuntring og sekundering underveis i testen. For at verbal oppmuntring og instruksjon ved test skulle være lik etterstreb vi å ha samme testleder til samme forsøksperson [@Halperin]. Det blir registrert nye oksygenmålinger hvert 30 sek, og de to høyeste påfølgende målingene blir definert som $\dot{V}O_{2maks}$. Umiddelbart etter test oppgir utøveren opplevd anstrengelse på Borg skala. Maks hjertefrekvens blir lest av fra utøvers pulsklokke. Blodprøve ble tatt fra utøverens fingertupp 1 min etter endt test for å måle \[BLa-\]. \[BLa-\] blir deretter målt ved hjelp av en Biosen C-line (Biosen C-line Lactate Analyzer, EKF Diagnostic GmbH, Barleben, Germany). Etter endt test ble det hentet ut data som videre ble plottet inn i Excel og videre ført statistikk på ved hjelp av Rstudio.
-
+$\dot{V}O_{2maks}$-testen gjennomføres etter en fem minutters standardisert oppvarming på ergometersykkelen. Oppvarmingen starter to minutter på 11-12 i Borg, deretter to minutter på 15 i Borg før ett minutt på 11-12 Borg. Testen starter på en belastning (Watt) basert på deltagerens nivå i samråd med utøver og testleder. Det viktigste er at påfølgende $\dot{V}O_{2maks}$ tester starter på samme watt. Wattbelastningen økte med 20W eller 25W (20W for kvinne og 25W for mann) hvert minutt frem til utøveren når maksimal utmattelse. Maksimal utmattelse ble i denne sammenheng ikke evne til å kunne opprettholde RPM \> 60. Under $\dot{V}O_{2maks}$ var RPM valgfritt. Testleder gjør verbal oppmuntring og sekundering underveis i testen. For at verbal oppmuntring og instruksjon ved test skulle være lik etterstreb vi å ha samme testleder til samme forsøksperson [@Halperin]. Det blir registrert nye oksygenmålinger hvert 30 sek, og de to høyeste påfølgende målingene blir definert som $\dot{V}O_{2maks}$. Umiddelbart etter test oppgir utøveren opplevd anstrengelse på Borg skala. Maks hjertefrekvens blir lest av fra utøvers pulsklokke. Blodprøve ble tatt fra utøverens fingertupp 1 min etter endt test for å måle \[BLa-\]. \[BLa-\] blir deretter målt ved hjelp av en Biosen C-line (Biosen C-line Lactate Analyzer, EKF Diagnostic GmbH, Barleben, Germany). Etter endt test ble det hentet ut data som videre ble plottet inn i Excel og videre ført statistikk på ved hjelp av Rstudio.
 
 ```{r}
 #| code-fold: true
@@ -42,10 +41,11 @@ library(ggtext)
 df <- read_xlsx("o2-test.xlsx")
 
 ```
+
 ## Resultat
 
-Etter at testene er gjennomført kan vi se nærmere på hver forsøkperson sine data. Dette gir muligheten til å se på hver enkelt forsøksperson om man finner dette interessant (Table 1.1). 
-Verdiene man kan se i tabellen, er verdier som er plottet etter endt $\dot{V}O_{2maks}$-test. 
+Etter at testene er gjennomført kan vi se nærmere på hver forsøkperson sine data. Dette gir muligheten til å se på hver enkelt forsøksperson om man finner dette interessant (Table 1.1). Verdiene man kan se i tabellen, er verdier som er plottet etter endt $\dot{V}O_{2maks}$-test.
+
 ```{r}
 #| code-fold: true
 #| message: false
@@ -102,8 +102,6 @@ df.tbl %>%
 
 ```
 
-
-
 ```{r}
 #| code-fold: true
 #| eval: false
@@ -128,8 +126,6 @@ df |>
 
 ```
 
-
-
 ```{r}
 #| code-fold: true
 o2meanK <- 3163
@@ -141,7 +137,6 @@ wmeanM <- 352
 wsdK <- 31.0
 wsdM <- 51.6
 ```
-
 
 Etter å ha gjennomført VO~2maks~-testene ser vi at kvinnene på 1MAIDR har et gjennomsnittlig oksygenopptak på `r o2meanK` ± `r o2sdK`. Mennene har derimot et gjennomsnittlig oksygenopptak på `r o2meanM` ± `r o2sdM`.
 
@@ -155,10 +150,6 @@ df.rel <- df |>
 
 
 ```
-
-
-
-
 
 ```{r}
 #| code-fold: true
@@ -193,10 +184,6 @@ df.rel |>
 #| echo: false
 cv_perct1_t2 <- 2.47
 ```
-
-
-
-
 
 ```{r}
 #| code-fold: true
@@ -233,9 +220,7 @@ df.rel |>
 cv_perct3_t4 <- 4.78
 ```
 
-
-
-Reliabiliteten mellom t1 og t2 er `r cv_perct1_t2`%, mens reliabiliteten mellom t3 og t4 er `r cv_perct3_t4`%. 
+Reliabiliteten mellom t1 og t2 er `r cv_perct1_t2`%, mens reliabiliteten mellom t3 og t4 er `r cv_perct3_t4`%.
 
 ### Korrelasjon mellom Vo2maks og Wattmaks per kg
 
@@ -285,8 +270,6 @@ df %>%
 
 ## Diskusjon
 
-På bakgrunn av resultatene vi har observert under testing av $\dot{V}O_{2maks}$, kan man slå fast at reliabiliteten til metoden vi har brukt er ganske god. Resultatene tyder på at vi får målt det vi er ute etter på en god måte, og det vil variere lite i måle-utstyret fra gang til gang. 
+På bakgrunn av resultatene vi har observert under testing av $\dot{V}O_{2maks}$, kan man slå fast at reliabiliteten til metoden vi har brukt er ganske god. Resultatene tyder på at vi får målt det vi er ute etter på en god måte, og det vil variere lite i måle-utstyret fra gang til gang.
 
-Dette sikrer at vi med ganske god sikkerhet, kan fastslå om et treningsprogram fungerer, ved å gjøre repeterte tester, med treningsperioder i mellom. 
-
-
+Dette sikrer at vi med ganske god sikkerhet, kan fastslå om et treningsprogram fungerer, ved å gjøre repeterte tester, med treningsperioder i mellom.

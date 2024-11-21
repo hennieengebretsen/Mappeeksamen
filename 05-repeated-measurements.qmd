@@ -21,7 +21,7 @@ En metaanalyse av Rhea et al. (2002) [@rhea2002]konkluderte med at personer som 
 
 Basert på den eksisterende kunnskapen om effekten av styrketrening, spesielt med tanke på treningsvolum, har denne studien som mål å undersøke om det er en forskjell i muskelstyrke og muskelmasse hos individer i alderen 18-40 år som trener enten ett sett eller tre sett på beina. Resultatene kan gi verdifull innsikt i hvorvidt forskjellige treningsvolumer påvirker styrke- og muskelmasseøkning.
 
-# 5.2 Metode
+#  Metode
 
 Det ble rekruttert 41 mannlige- og kvinnelige deltagere til studien. For å kunne delta i studien måtte man være mellom 18-40 år og ikke røyker. Eksklusjonskriteriene var at du ikke kunne ha trent mer enn en ukentlig styrketreningsøkt det siste året. Ikke ha nedsatt muskelstyrke relatert til en tidligere eller enn nåværende skade. Gå på medisiner som kan påvirke adaptasjoner til trening, eller være allergisk mot lokalbedøvelse.
 

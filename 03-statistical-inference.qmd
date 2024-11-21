@@ -68,8 +68,7 @@ SE (standard error) er standardfeilen vil være et mål på hvordan et statistis
 
 T-verdi kan ses på som en statistisk verdi hvor et forhold mellom estimatet og standardfeilen. 
 
-P-verdi sier noe om hvis vi skulle gjentatt forsøket igjen om sannsynligheten om vi da ville fått et resultat som er like ekstremt eller mer ekstremt enn det vi har observert. I denne modellen har vi fått en verdi som er høyere enn p <0.05 som vil si at vi ikke kan forkaste den null-hypotesen vi har.  
-
+**P-verdien** uttrykker sannsynligheten for å observere en teststatistikk som er like ekstrem eller mer ekstrem enn det faktiske resultatet, forutsatt at nullhypotesen (H₀) er sann. Den måler hvor godt dataene samsvarer med nullhypotesen og bidrar til å vurdere usikkerheten i resultatene. Lave p-verdier indikerer at resultatene sannsynligvis ikke skyldes tilfeldigheter, og gir dermed støtte for å forkaste H₀. Høye p-verdier tyder derimot på at resultatene kan forklares med tilfeldigheter, og gir ikke tilstrekkelig grunnlag for å forkaste H₀. Dermed fungerer p-verdien som et verktøy for å evaluere evidensen mot nullhypotesen og trekke konklusjoner basert på statistiske analyser. 
 
 De to ulike modellene får ulike resultater en av grunnene til dette er at det er ulikt utvalg i de to ulike modellene i lm1 er det n =8, mens i lm2 er det n =40. Utvalgsstørrelsen vil ha en innvirkning på resultatene, ved at man har et større utvalg vil den statistiske styrken være høyere og det vil dermed være lettere å kunne oppdage om det vil være en reell effekt en ser. Det samme vil gjelde for standardfeil ved et større utvalg vil standardfeil til gjennomsnittet reduseres, en vil da ha mindre konfidensintervall og estimatene vil kunne bli mer presist.
 
