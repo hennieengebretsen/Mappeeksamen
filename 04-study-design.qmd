@@ -14,7 +14,7 @@ I de ulike studiene ble flere statistiske metoder benyttet for å analysere data
 
 For å sammenligne baseline-målingene mellom gruppene, ble det i flere av studiene benyttet en to-sidet unpaired t-test for uavhengige prøver. Denne testen ble brukt for å vurdere om det var signifikante forskjeller i variabler som VO<sub>2max</sub>, vekt og høyde ved starten av studiene. Videre ble endringer mellom pre- og post-intervensjon i de samme gruppene vurdert ved hjelp av to-sidet paired t-test som tester om det er statistisk signifikante forskjeller i målingene innenfor hver gruppe.
 
-For å vurdere effektene av intervensjonen på tvers av tid og gruppe, benyttet flere av studiene to-veis ANOVA med repeterte målinger. Denne metoden gjør det mulig å undersøke interaksjonseffekter mellom tid (pre- vs. post-intervensjon) og gruppe (f.eks., BP vs. TP). Når ANOVA resulterte i signifikante hoved- eller interaksjonseffekter, ble det utført Tukey’s HSD (Honestly Significant Difference) post-hoc tester or å identifisere hvilke spesifikke grupper som skilte seg ut.
+For å vurdere effektene av intervensjonen på tvers av tid og gruppe, benyttet flere av studiene to-veis ANOVA med repeterte målinger. Denne metoden gjør det mulig å undersøke interaksjonseffekter mellom tid (pre- vs. post-intervensjon) og gruppe (f.eks., BP vs. TP). Når ANOVA resulterte i signifikante hoved- eller interaksjonseffekter, ble det i studien utført av [@rønnestad2014g] gjort Tukey’s HSD (Honestly Significant Difference) post-hoc tester or å identifisere hvilke spesifikke grupper som skilte seg ut.
 
 Effektstørrelse (ES) ble beregnet for å vurdere praktisk betydning av forbedringer mellom gruppene. Cohen’s d ble brukt til å beregne ES, og kategoriseringen av ES fulgte standarden: 0.0–0.2 ble betraktet som trivielt, 0.2–0.6 som lite, 0.6–1.2 som moderat, og verdier over 1.2 som store effekter @hopkins2009.
 
@@ -22,7 +22,7 @@ For å sammenligne relative endringer mellom gruppene i spesifikke parametere so
 
 Statistisk signifikans ble generelt vurdert ved en p-verdi ≤ 0,05, for at funnene kan anses som statistisk signifikante.
 
-Resultater og diskusjon
+# Resultater og diskusjon
 
 Det kommer frem i alle studiene når BP gruppen og TP gruppen er sammenlignet at BP gruppen post intervensjonen har hatt en signifikant økning i VO<sub>2max</sub>. 
 
@@ -32,4 +32,4 @@ En annen problemstilling en kan stille spørsmålstegn ved er at utvalget som er
 
 # Konklusjon
 
-Blokkperiodisering viser seg og ha en større effekt på økning i VO<sub>2max</sub> enn tradisjonell periodisering.
+En betrakting en kan gjøre er at det er et begrenset utvalg realtert til en målgruppe hvor forskningsdeltagerene er godt trente indvider. Samt at i mange av studiene er det begrenset til å kun være mannlige forsøkspersoner. For å gjøre det både mer allment og for å kunne si noe om den generelle populasjonen, bør det være et større mangfold i utvalget.
