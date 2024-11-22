@@ -1,6 +1,10 @@
-# Introduksjon  {.unnumbered}
+# Forord  {.unnumbered}
+
+Denne oppgaven består av ulike arbeidskrav gjort enten som gruppe eller som selvstendig arbeid i IDR 4000.
+
+Takk til Eskil og Ole K for god veiledning og svar når R har skapt frustrasjon. Takk til Ole C for motiverende ord når det har sett mørkt ut. Uten deres veiledning og kloke ord hadde ikke denne oppgaven vært mulig
 
 
-Mappeeksamen i IDR 4000 består både av oppgaver gjort i gruppe men også selvstendig arbeid. 
+ 
 
-Link til git: https://github.com/hennieengebretsen/Mappeeksamen
+Link til repository på git for å etterprøve koder: https://github.com/hennieengebretsen/Mappeeksamen
